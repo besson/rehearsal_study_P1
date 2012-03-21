@@ -1,0 +1,7 @@
+.metadata/*
+*.class
+*.log
+*.jar
+*build/*
+*target/*
+**/target/*
