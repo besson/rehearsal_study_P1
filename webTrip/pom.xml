@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>eu.choreos</groupId>
-  <artifactId>flight_finder</artifactId>
+  <artifactId>web_trip</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>flight_finder</name>
+  <name>web_trip</name>
   <url>http://maven.apache.org</url>
 
   <properties>

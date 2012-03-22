@@ -14,7 +14,7 @@ import eu.choreos.vv.clientgenerator.WSClient;
 
 public class FFOperationsTest {
 	
-	private final String WSDL_URI = "http://localhost:1234/flightFinder";
+	private final String WSDL_URI = "http://localhost:1234/webTrip";
 	
 	@Before
 	public void setUp(){
