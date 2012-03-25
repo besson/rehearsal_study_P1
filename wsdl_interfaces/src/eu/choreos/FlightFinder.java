@@ -9,5 +9,5 @@ import eu.choreos.model.FlightInfo;
 @WebService
 public interface FlightFinder {
 
-	public @WebResult(name="flightInformation")FlightInfo getFlightInfo(@WebParam(name="id")int id);
+	public @WebResult(name="flightInformation")FlightInfo getFlightInfo(@WebParam(name="id")String id);
 }

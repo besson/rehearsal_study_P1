@@ -15,7 +15,7 @@ import eu.choreos.model.FlightInfo;
 public class FlightFinderImpl implements FlightFinder{
 
 	@Override
-	public FlightInfo getFlightInfo(int id) {
+	public FlightInfo getFlightInfo(String id) {
 		return null;
 	}
 

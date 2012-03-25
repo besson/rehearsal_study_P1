@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance" 
+name="interactiveGuide" targetNamespace="http://api.choreos.eu/interactiveGuide">
+
+<service name="interactiveGuideRole" promote="orchestrator/interactiveGuide">
+	<binding.ws uri="http://localhost:8001/services/interactiveGuide"/>
+</service>
+
+<component name="orchestrator">
+	<implementation.java class="eu.choreos.service.Orchestrator"/>
+
+<service name="interactiveGuide">
+	<interface.java interface="eu.choreos.api.InteractiveGuide"/>
+</service>
+
+<reference name="flightFinder">
+	<binding.ws wsdlElement="http://impl.choreos.eu#wsdl.port(FlightFinderImplService/FlightFinderImplPort)" wsdli:wsdlLocation="http://localhost:9001/mocks/flightFinder?wsdl"/>
+</reference>
+
+</component>
+</composite>
