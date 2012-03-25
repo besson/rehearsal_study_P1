@@ -1,11 +1,11 @@
 roles:
     - role: &1
        name: interactiveGuide
-       contractUri: http://localhost:1234/interactiveGuide?wsdl
+       contractUri: http://localhost:8084/petals/services/interactiveGuideContract?wsdl
 
     - role: &2
        name: flightFinder
-       contractUri: http://localhost:1234/flightFinder?wsdl
+       contractUri: http://localhost:8084/petals/services/flightFinderContract?wsdl
 
 services:
     - uri: http://localhost:8001/services/interactiveGuide?wsdl

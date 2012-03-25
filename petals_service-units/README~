@@ -1,0 +1,2 @@
+This project contains the petals service units. We used petals as a service registry in the study. All services used in the composition are available in Petals. 
+Since all services used in the SCA composition must be running 

@@ -3,7 +3,6 @@ package eu.choreos.api;
 import org.osoa.sca.annotations.Service;
 
 import eu.choreos.CarParkEntry;
-import eu.choreos.CarParkEntry;
 
 @Service	
 public interface InteractiveGuide {

@@ -41,7 +41,7 @@
   <classpathentry kind="var" path="M2_REPO/eu/choreos/vvws/musicstore/1.0-SNAPSHOT/musicstore-1.0-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/net/sourceforge/nekohtml/nekohtml/1.9.9/nekohtml-1.9.9.jar"/>
   <classpathentry kind="var" path="M2_REPO/ca/juliusdavies/not-yet-commons-ssl/0.3.11/not-yet-commons-ssl-0.3.11.jar"/>
-  <classpathentry kind="src" path="/rehearsal"/>
+  <classpathentry kind="var" path="M2_REPO/eu/choreos/rehearsal/0.12/rehearsal-0.12.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/jayway/restassured/rest-assured/1.2.2/rest-assured-1.2.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/net/sf/saxon/saxon/8.7/saxon-8.7.jar"/>
   <classpathentry kind="var" path="M2_REPO/saxon/saxon-jdom/6.5.3/saxon-jdom-6.5.3.jar"/>

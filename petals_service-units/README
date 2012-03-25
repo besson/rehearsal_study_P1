@@ -1,0 +1,2 @@
+This project contains the Petals service units. We used petals as a service registry in the study. All services used in the composition are available in Petals. 
+This way, even if the service is not running, its interface can be found in Petals. It is particulary important to start Frascati since all interfaces (WSDL file) of services participating the SCA composition must be online. 

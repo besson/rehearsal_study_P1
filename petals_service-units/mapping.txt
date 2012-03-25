@@ -1,0 +1,44 @@
+Mapping
+------------------------------------
+
+contracts
+-----------------------
+interactive guide: http://localhost:8084/petals/services/interactiveGuideContract?wsdl
+car park reservation: http://localhost:8084/petals/services/carParkReservationContract?wsdl
+flight finder: http://localhost:8084/petals/services/flightFinderContract?wsdl
+
+mocks
+-----------------------
+** flightFinder:
+real-uri: http://localhost:9002/mocks/flightFinder?wsdl
+petals-uri: http://localhost:8084/petals/services/flightFinderMock?wsdl
+
+role: flightFinder
+------------------------
+contract-uri: http://localhost:8084/petals/services/InteractiveGuideContract?wsdl
+
+real-uri (implementation): http://localhost:8002/services/flightFinder?wsdl
+petals-uri: http://localhost:8084/petals/services/flightFinder?wsdl
+
+mock-uri: http://localhost:9002/mocks/flightFinder?wsdl
+proxy-uri: http://localhost:9102/flightFinderProxy?wsdl
+
+
+role: carParkReservation
+------------------------
+real-uri (implementation): http://localhost:8003/services/carParkReservation?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservation?wsdl
+
+mock-uri: http://localhost:9003/mocks/carParkReservation?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservation?wsdl
+
+proxy-uri: http://localhost:9103/carParkReservationProxy?wsdl
+
+
+role: interactiveGuide
+------------------------
+real-uri (implementation): http://localhost:8001/services/interactiveGuide?wsdl
+petals-uri: http://localhost:8084/petals/services/interactiveGuide?wsdl
+mock-uri: http://localhost:9001/mocks/interactiveGuide?wsdl
+proxy-uri: http://localhost:9101/interactiveGuide?wsdl
+

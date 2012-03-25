@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w:definitions name="FlightFinderImplService" targetNamespace="http://impl.choreos.eu/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns41_="ns27" xmlns:ns42="ns43" xmlns:ns41="ns17" xmlns:ns40="ns16" xmlns:ns46="ns35" xmlns:ns45="ns19" xmlns:ns44="ns33" xmlns:ns43="http://impl.choreos.eu/" xmlns:ns49="ns28" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns16="ns29" xmlns:ns17="ns14" xmlns:ns14="wsu" xmlns:ns18="wsp" xmlns:ns18_="ns31" xmlns:ns19="ns6" xmlns:ns12="ns18" xmlns:ns13="http://www.w3.org/2007/05/addressing/metadata" xmlns:ns10="http://petals.ow2.org/wsdlExtensions" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:ns60="ns20_" xmlns:ns11="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns50="ns32" xmlns:ns53="ns1" xmlns:ns52="ns34" xmlns:tns="http://choreos.eu/" xmlns:ns54="ns39" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns59="ns38" xmlns:ns58="ns3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns29_="w" xmlns:ns29="ns26" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:ns26="xml" xmlns:ns27="ns9" xmlns:ns28="ns5" xmlns:ns21="mime" xmlns:ns22="ns8" xmlns:ns23="ns24" xmlns:ns24="wsp1_2" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns20="tns" xmlns:ns62="ns21" xmlns:ns61="soap" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ns40_="ns10" xmlns:ns23_="ns37" xmlns:ns38="xsd" xmlns:ns39="http" xmlns:ns36="ns41" xmlns:ns37="ns20" xmlns:ns9="http://www.w3.org/ns/wsdl/soap" xmlns:ns34="ns40" xmlns:ns35="ns7" xmlns:ns32="wsam" xmlns:ns33="ns12" xmlns:ns5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns6="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns31="ns22" xmlns:ns7="http://www.w3.org/ns/wsdl" xmlns:ns8="http://www.w3.org/ns/wsdl/http" xmlns:w="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns20_="ns23">
+  <w:import namespace="http://choreos.eu/" location="_WSDL_interface_FlightFinderImplPortBinding_part_flightFinderContract_1.wsdl">
+    </w:import>
+  <w:binding name="FlightFinderImplPortBinding" type="tns:FlightFinder">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <w:operation name="getFlightInfo">
+      <soap:operation soapAction=""/>
+      <w:input>
+        <soap:body use="literal"/>
+      </w:input>
+      <w:output>
+        <soap:body use="literal"/>
+      </w:output>
+    </w:operation>
+  </w:binding>
+  <w:service name="FlightFinderImplService">
+    <w:port name="FlightFinderImplPort" binding="ns43:FlightFinderImplPortBinding">
+      <soap:address location="http://batcave:9002/"/>
+    </w:port>
+  </w:service>
+</w:definitions>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns10="http://petals.ow2.org/wsdlExtensions" xmlns:ns11="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns2="http://schemas.xmlsoap.org/wsdl/" xmlns:ns3="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns6="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns7="http://www.w3.org/ns/wsdl" xmlns:ns8="http://www.w3.org/ns/wsdl/http" xmlns:ns9="http://www.w3.org/ns/wsdl/soap" targetNamespace="http://choreos.eu/" version="1.0">
+  <xs:element xmlns:tns="http://choreos.eu/" name="getFlightInfo" type="tns:getFlightInfo" />
+  <xs:element xmlns:tns="http://choreos.eu/" name="getFlightInfoResponse" type="tns:getFlightInfoResponse" />
+  <xs:complexType name="getFlightInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFlightInfoResponse">
+    <xs:sequence>
+      <xs:element xmlns:tns="http://choreos.eu/" minOccurs="0" name="flightInformation" type="tns:flightInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="flightInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="company" type="xs:string" />
+      <xs:element minOccurs="0" name="destination" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="terminal" type="xs:string" />
+      <xs:element minOccurs="0" name="time" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

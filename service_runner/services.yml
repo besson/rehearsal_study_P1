@@ -1,0 +1,4 @@
+mocks:
+  - real: http://localhost:8084/petals/services/flightFinderContract?wsdl
+    name: mocks/flightFinder
+    port: 9002

@@ -29,7 +29,7 @@ public class OperationsTest {
 		interactiveGuide = choreography.getServicesForRole("interactiveGuide").get(0);
 		String flightFinderWSDL = choreography.getRoles().get(0).getContractUri();
 		
-		ffMock = new WSMock("mocks/flightFinder", flightFinderWSDL, "9001", true);
+		ffMock = new WSMock("mocks/flightFinder", flightFinderWSDL, "9002", true);
 		Item flighInfoResponse = getFlightInfoResponse();
 		
 		MockResponse response = new MockResponse().whenReceive("*").replyWith(flighInfoResponse);
