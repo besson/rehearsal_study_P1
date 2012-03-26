@@ -5,7 +5,8 @@ roles:
 
     - role: &2
        name: flightFinder
-       contractUri: http://localhost:8084/petals/services/flightFinderContract?wsdl
+       contractUri: file:///home/besson/workspace/CHOReOS/rehearsal-study/wsdl_interfaces/resources/flightFinder/flightFinder.wsdl
+
 
 services:
     - uri: http://localhost:8001/services/interactiveGuide?wsdl
