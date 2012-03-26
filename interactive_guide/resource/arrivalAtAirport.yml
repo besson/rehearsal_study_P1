@@ -1,11 +1,15 @@
 roles:
     - role: &1
        name: interactiveGuide
-       contractUri: http://localhost:8084/petals/services/interactiveGuideContract?wsdl
+       contractUri: file:///home/rehearsal/study/resources/interactiveGuide?wsdl
 
     - role: &2
        name: flightFinder
-       contractUri: file:///home/rehearsal/workspace/rehearsal-study/wsdl_interfaces/resources/flightFinder/flightFinder.wsdl
+       contractUri: file:///home/rehearsal/study/resources/flightFinder/flightFinder.wsdl
+
+    - role: &3
+       name: carParkReservation
+       contractUri: file:///home/rehearsal/study/resources/carParkReservation/carParkReservation.wsdl
 
 
 services:
@@ -14,3 +18,7 @@ services:
       participants:
         - uri: http://localhost:8002/services/flighFinder?wsdl
           uri: http://localhost:8002/services/CarParkReservation?wsdl
+
+
+
+

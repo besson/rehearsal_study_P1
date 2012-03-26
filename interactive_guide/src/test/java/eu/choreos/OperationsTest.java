@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -27,7 +25,7 @@ public class OperationsTest {
 	
 	@BeforeClass
 	public static void setUp() throws Exception{
-		choreography = Choreography.build("resource/arrivalAtAirport.yml");
+		choreography = Choreography.build("./resource/arrivalAtAirport.yml");
 		interactiveGuide = choreography.getServicesForRole("interactiveGuide").get(0);
 		String flightFinderWSDL = choreography.getRoles().get(0).getContractUri();
 		
