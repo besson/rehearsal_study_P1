@@ -72,7 +72,7 @@ public class OperationsTest {
 	
 	private static Item getFlightInfoResponse(){
 		Item getFlightInfoResponse = new ItemImpl("getFlightInfoResponse"); 
-		Item flightInformation = new ItemImpl("flightInformation"); 
+		Item flightInformation = new ItemImpl("return"); 
 		Item id = new ItemImpl("id"); 
 		id.setContent("A1234"); 
 		flightInformation.addChild(id); 

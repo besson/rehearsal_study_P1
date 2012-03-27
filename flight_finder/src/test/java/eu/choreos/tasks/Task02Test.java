@@ -1,18 +1,17 @@
 package eu.choreos.tasks;
 
 import static org.junit.Assert.*;
-
-import java.util.List;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.internal.runners.statements.Fail;
 
 import eu.choreos.vv.abstractor.Choreography;
 import eu.choreos.vv.abstractor.Service;
 import eu.choreos.vv.clientgenerator.Item;
 import eu.choreos.vv.clientgenerator.ItemImpl;
 import eu.choreos.vv.clientgenerator.WSClient;
-import eu.choreos.vv.interceptor.MessageInterceptor;
 
 
 public class Task02Test {
@@ -38,19 +37,18 @@ public class Task02Test {
 		WSClient client = new WSClient(flightFinderWSDL);
 		Item response = client.request("getFlightInfo", "1234");
 		
-		Item flightInfo = response.getChild("flightInformation");
+		Item flightInfo = response.getChild("return");
 		
 		assertEquals("0815", flightInfo.getChild("id").getContent());
-		assertEquals("130pm", flightInfo.getChild("time").getContent());
+		assertEquals("130p", flightInfo.getChild("time").getContent());
 		assertEquals("8", flightInfo.getChild("terminal").getContent());
 		assertEquals("AA", flightInfo.getChild("company").getContent());
-		assertEquals("Paris", flightInfo.getChild("destinarion").getContent());
+		assertEquals("Paris", flightInfo.getChild("destination").getContent());
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
-
-		
+		assertTrue(false);
 	}
 	
 	private Item getFligthResponse() {
