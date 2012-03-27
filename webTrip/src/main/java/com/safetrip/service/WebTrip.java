@@ -8,7 +8,7 @@ import javax.jws.WebService;
 import com.safetrip.model.Flight;
 
 @WebService
-public interface FlightFinder {
+public interface WebTrip {
 	
 	@WebMethod
 	public @WebResult(name="result") String addFlight(@WebParam (name="flight")Flight flight);

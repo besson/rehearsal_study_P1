@@ -6,12 +6,12 @@ import javax.jws.WebService;
 
 import com.safetrip.model.Flight;
 
-@WebService(endpointInterface="com.safetrip.service.FlightFinder")
-public class FlightFinderImpl implements FlightFinder{
+@WebService(endpointInterface="com.safetrip.service.WebTrip")
+public class WebTripImpl implements WebTrip{
 
 	HashMap<Integer, Flight> flights;
 	
-	public FlightFinderImpl(){
+	public WebTripImpl(){
 		flights = new HashMap<Integer, Flight>();
 	}
 	
