@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance" name="interactiveGuide" targetNamespace="http://api.choreos.eu/carParkReservation">
+
+<service name="interactiveGuideRole" promote="orchestrator/carParkReservation">
+	<binding.ws uri="http://localhost:8003/services/carParkReservation"/>
+</service>
+
+<component name="orchestrator">
+	<implementation.java class="eu.choreos.service.Orchestrator"/>
+
+<service name="carParkReservation">
+	<interface.java interface="eu.choreos.api.CarParkReservation"/>
+</service>
+
+<reference name="carParking">
+	<binding.ws wsdlElement="http://service.choreos.eu#wsdl.port(CarParkingWSService/CarParkingWSPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/carParkingWSProxy?wsdl"/>
+</reference>
+
+</component>
+</composite>
