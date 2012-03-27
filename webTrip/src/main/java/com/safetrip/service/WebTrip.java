@@ -14,6 +14,6 @@ public interface WebTrip {
 	public @WebResult(name="result") String addFlight(@WebParam (name="flight")Flight flight);
 	
 	@WebMethod
-	public @WebResult(name="flight") Flight getFlight(@WebParam (name="id") int id);
+	public @WebResult(name="flight") Flight getFlight(@WebParam (name="id") String id);
 
 }

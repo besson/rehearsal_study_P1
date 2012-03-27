@@ -2,16 +2,16 @@ package com.safetrip.model;
 
 public class Flight {
 
-	private int id;
+	private String id;
 	private String company;
 	private String destination;
 	private String time;
 	private String terminal;
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getDestination() {

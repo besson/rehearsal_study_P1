@@ -9,10 +9,10 @@ import com.safetrip.model.Flight;
 @WebService(endpointInterface="com.safetrip.service.WebTrip")
 public class WebTripImpl implements WebTrip{
 
-	HashMap<Integer, Flight> flights;
+	HashMap<String, Flight> flights;
 	
 	public WebTripImpl(){
-		flights = new HashMap<Integer, Flight>();
+		flights = new HashMap<String, Flight>();
 	}
 	
 	@Override
@@ -22,7 +22,7 @@ public class WebTripImpl implements WebTrip{
 	}
 
 	@Override
-	public Flight getFlight(int id) {
+	public Flight getFlight(String id) {
 		return flights.get(id);
 	}
 

@@ -11,6 +11,9 @@
 	<interface.java interface="eu.choreos.api.FlightFinder"/>
 </service>
 
+<reference name="webTrip">
+	<binding.ws wsdlElement="http://service.safetrip.com#wsdl.port(WebTripImplService/WebTripImplPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/webTripMock?wsdl"/>
+</reference>
 
 </component>
 </composite>
