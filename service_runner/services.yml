@@ -3,6 +3,10 @@ mocks:
     name: mocks/flightFinder
     port: 9002
 
+  - real: file:///home/besson/workspace/CHOReOS/rehearsal-study/wsdl_interfaces/resources/webTrip/webTrip.wsdl
+    name: webTripMock
+    port: 4321
+
 proxies:
   - real: http://localhost:1234/carParkingWS?wsdl
     port: 7003
