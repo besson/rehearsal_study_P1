@@ -48,11 +48,11 @@ public class ParkSafe {
 		return customerList;
 	}
 
-	public void assingCarParkPlace(String customerId, String carParkId) {
+	public void assingCarParkPlace(String customerId, String carParkId, String terminal) {
 		carParkPlaces.put(customerId, carParkId);
 	}
 
-	public String getCarParkPlace(String customerId) {
+	public String getCarParkPlace(String customerId, String terminal) {
 		return carParkPlaces.get(customerId);
 	}
 	

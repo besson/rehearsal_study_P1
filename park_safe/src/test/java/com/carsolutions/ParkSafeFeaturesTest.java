@@ -42,16 +42,16 @@ public class ParkSafeFeaturesTest {
 	
 	@Test
 	public void shouldAssignACarParkPlaceToACustomer() throws Exception {
-		system.assingCarParkPlace("1", "VFH1");
+		system.assingCarParkPlace("1", "VFH1", "8");
 		
-		String carPark = system.getCarParkPlace("1");
+		String carPark = system.getCarParkPlace("1", "8");
 		
 		assertEquals("VFH1", carPark);
 	}
 	
 	@Test
 	public void shouldGetLatitudeAndLongitudeOfACarParkPlace() throws Exception {
-		system.assingCarParkPlace("1", "VFH1");
+		system.assingCarParkPlace("1", "VFH1", "8");
 		
 		String latitude = system.getLatitude("VFH1");
 		String longitude = system.getLongitude("VFH1");
@@ -64,7 +64,7 @@ public class ParkSafeFeaturesTest {
 	public void shouldLoadTheProductionDataCorrectly() throws Exception {
 		ParkSafe system = new ParkSafe();
 		List<Client> clients = system.getClients();
-		String place = system.getCarParkPlace("A1");
+		String place = system.getCarParkPlace("A1", "8");
 		
 		assertEquals("Steve", clients.get(0).getFirstName());
 		assertEquals("J123", place);

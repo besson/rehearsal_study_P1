@@ -1,15 +1,19 @@
 Mapping
 ------------------------------------
 
-contracts
+roles
 -----------------------
-interactive guide: http://localhost:8084/petals/services/interactiveGuideContract?wsdl
-car park reservation: http://localhost:8084/petals/services/carParkReservationContract?wsdl
-flight finder: http://localhost:8084/petals/services/flightFinderContract?wsdl
+** interactiveGuide:
+real-uri (implementation): http://localhost:8001/services/interactiveGuide?wsdl
+petals-uri: http://localhost:8084/petals/services/interactiveGuide?wsdl
+** carParkReservation:
+real-uri (implementation): http://localhost:8003/services/carParkReservation?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservation?wsdl
+
 
 mocks
 -----------------------
-* flightFinder
+** flightFinder:
 real-uri: http://localhost:9002/mocks/flightFinder?wsdl
 petals-uri: http://localhost:8084/petals/services/flightFinderMock?wsdl
 

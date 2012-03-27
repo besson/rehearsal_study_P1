@@ -7,11 +7,11 @@ import com.carsolutions.ParkSafe;
 @WebService
 public class CarParkingWS {
 
-	public String getCarParkCode (String customerId){
+	public String getCarParkCode (String customerId, String terminal){
 		//TODO: Erase
 		ParkSafe system = new ParkSafe();
 		
-		return system.getCarParkPlace(customerId);
+		return system.getCarParkPlace(customerId, "8");
 	}
 	
 	public String getLatitude (String carParkId){

@@ -25,7 +25,7 @@ public class OperationsTest {
 	
 	@BeforeClass
 	public static void setUp() throws Exception{
-		choreography = Choreography.build("./resource/arrivalAtAirport.yml");
+		choreography = Choreography.build("/home/rehearsal/study/resources/arrivalAtAirport.yml");
 		interactiveGuide = choreography.getServicesForRole("interactiveGuide").get(0);
 		String flightFinderWSDL = choreography.getRoles().get(0).getContractUri();
 		
