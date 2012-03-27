@@ -19,7 +19,9 @@ petals-uri: http://localhost:8084/petals/services/flightFinderMock?wsdl
 
 proxies
 -----------------------
-** carParkReservation
-real-uri: http://localhost:9003/carParkReservationProxy?wsdl
+** carParkingWS
+real-uri: http://localhost:9003/carParkingWSProxy?wsdl
 petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
 
+** flightFinder
+real-uri: http://localhost:6002/flightFinderProxy?wsdl
