@@ -7,16 +7,16 @@
       <xsd:import namespace="http://choreos.eu/" schemaLocation="carParkReservation_xsd_1" />
     </xsd:schema>
   </types>
-  <message name="getParkInfo">
-    <part name="parameters" element="tns:getParkInfo" />
+  <message name="setPassengerInfo">
+    <part name="parameters" element="tns:setPassengerInfo" />
   </message>
-  <message name="getParkInfoResponse">
-    <part name="parameters" element="tns:getParkInfoResponse" />
+  <message name="setPassengerInfoResponse">
+    <part name="parameters" element="tns:setPassengerInfoResponse" />
   </message>
   <portType name="CarParkReservation">
-    <operation name="getParkInfo">
-      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://choreos.eu/CarParkReservation/getParkInfoRequest" message="tns:getParkInfo" />
-      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://choreos.eu/CarParkReservation/getParkInfoResponse" message="tns:getParkInfoResponse" />
+    <operation name="setPassengerInfo">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://choreos.eu/CarParkReservation/setPassengerInfoRequest" message="tns:setPassengerInfo" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://choreos.eu/CarParkReservation/setPassengerInfoResponse" message="tns:setPassengerInfoResponse" />
     </operation>
   </portType>
 </definitions>

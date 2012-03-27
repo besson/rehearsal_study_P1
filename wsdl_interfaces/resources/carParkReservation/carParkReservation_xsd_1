@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://choreos.eu/" version="1.0" targetNamespace="http://choreos.eu/">
-  <xs:element name="getParkInfo" type="tns:getParkInfo" />
-  <xs:element name="getParkInfoResponse" type="tns:getParkInfoResponse" />
-  <xs:complexType name="getParkInfo">
+  <xs:element name="setPassengerInfo" type="tns:setPassengerInfo" />
+  <xs:element name="setPassengerInfoResponse" type="tns:setPassengerInfoResponse" />
+  <xs:complexType name="setPassengerInfo">
     <xs:sequence>
-      <xs:element name="id" type="xs:int" />
-      <xs:element name="terminal" type="xs:string" minOccurs="0" />
+      <xs:element name="arg0" type="xs:int" />
+      <xs:element name="arg1" type="xs:string" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="getParkInfoResponse">
+  <xs:complexType name="setPassengerInfoResponse">
     <xs:sequence>
-      <xs:element name="CarkParkInformation" type="tns:carParkInfo" minOccurs="0" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="carParkInfo">
-    <xs:sequence>
-      <xs:element name="latitude" type="xs:string" minOccurs="0" />
-      <xs:element name="longitude" type="xs:string" minOccurs="0" />
-      <xs:element name="parkNumber" type="xs:string" minOccurs="0" />
+      <xs:element name="return" type="xs:string" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

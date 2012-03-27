@@ -4,7 +4,7 @@
     </import>
   <binding name="CarParkReservationImplPortBinding" type="ns1:CarParkReservation">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <operation name="getParkInfo">
+    <operation name="setPassengerInfo">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
