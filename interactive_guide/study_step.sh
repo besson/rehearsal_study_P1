@@ -6,4 +6,4 @@ LIB="$HOME/.m2/repository/com/orientechnologies/orient-commons/1.0rc5/orient-com
 rm -rf target/generated-frascati-*
 
 frascati compile "src/main" "target/$ROLE" $LIB
-frascati run "resource/$ROLE.composite" -libpath "target/$ROLE.jar" $LIB
+frascati run "resource/$ROLE$1.composite" -libpath "target/$ROLE.jar" $LIB

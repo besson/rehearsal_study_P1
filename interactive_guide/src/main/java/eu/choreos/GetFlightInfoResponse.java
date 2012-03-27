@@ -3,6 +3,7 @@ package eu.choreos;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="flightInformation" type="{http://choreos.eu/}flightInfo" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://choreos.eu/}flightInfo" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getFlightInfoResponse", propOrder = {
-    "flightInformation"
+    "_return"
 })
 public class GetFlightInfoResponse {
 
-    protected FlightInfo flightInformation;
+    @XmlElement(name = "return")
+    protected FlightInfo _return;
 
     /**
-     * Gets the value of the flightInformation property.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
      *     {@link FlightInfo }
      *     
      */
-    public FlightInfo getFlightInformation() {
-        return flightInformation;
+    public FlightInfo getReturn() {
+        return _return;
     }
 
     /**
-     * Sets the value of the flightInformation property.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is
      *     {@link FlightInfo }
      *     
      */
-    public void setFlightInformation(FlightInfo value) {
-        this.flightInformation = value;
+    public void setReturn(FlightInfo value) {
+        this._return = value;
     }
 
 }
