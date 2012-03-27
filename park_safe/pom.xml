@@ -4,7 +4,7 @@
   <groupId>com.carsolutions</groupId>
   <artifactId>park_safe</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>park_safe</name>
   <url>http://maven.apache.org</url>
   <dependencies>
