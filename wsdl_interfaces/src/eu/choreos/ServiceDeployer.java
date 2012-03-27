@@ -15,7 +15,7 @@ public class ServiceDeployer {
 	
 	public static void main(String[] args) {
 		ServiceDeployer.publishService("interactiveGuide", "1234", new InteractiveGuideImpl());
-		ServiceDeployer.publishService("mocks/flightFinder", "9002", new FlightFinderImpl());
+		ServiceDeployer.publishService("flightFinder", "1234", new FlightFinderImpl());
 		ServiceDeployer.publishService("carParkReservation", "1234", new CarParkReservationImpl());
 	}
 
