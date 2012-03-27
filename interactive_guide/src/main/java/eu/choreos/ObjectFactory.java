@@ -35,19 +35,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetFlightInfo }
-     * 
-     */
-    public GetFlightInfo createGetFlightInfo() {
-        return new GetFlightInfo();
-    }
-
-    /**
      * Create an instance of {@link FlightInfo }
      * 
      */
     public FlightInfo createFlightInfo() {
         return new FlightInfo();
+    }
+
+    /**
+     * Create an instance of {@link GetFlightInfo }
+     * 
+     */
+    public GetFlightInfo createGetFlightInfo() {
+        return new GetFlightInfo();
     }
 
     /**

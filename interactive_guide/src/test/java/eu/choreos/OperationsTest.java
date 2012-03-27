@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -56,7 +58,7 @@ public class OperationsTest {
 		client.request("calculateLocations", "A1");
 		List<Item> messages = ffMock.getInterceptedMessages();
 		
-		assertEquals("A1", messages.get(0).getChild("id").getContent());
+		assertEquals("A1", messages.get(0).getChild("arg0").getContent());
 	}
 	
 	
