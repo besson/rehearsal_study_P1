@@ -2,3 +2,7 @@ mocks:
   - real: file:///home/besson/workspace/CHOReOS/rehearsal-study/wsdl_interfaces/resources/flightFinder/flightFinder.wsdl
     name: mocks/flightFinder
     port: 9002
+
+proxies:
+  - real: http://localhost:1234/carParkingWS?wsdl
+    port: 7003

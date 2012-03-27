@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01.-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.choreos.eu/" version="1.0" targetNamespace="http://service.choreos.eu/">
+  <xs:element name="getCarParkCode" type="tns:getCarParkCode" />
+  <xs:element name="getCarParkCodeResponse" type="tns:getCarParkCodeResponse" />
+  <xs:element name="getLatitude" type="tns:getLatitude" />
+  <xs:element name="getLatitudeResponse" type="tns:getLatitudeResponse" />
+  <xs:element name="getLongitude" type="tns:getLongitude" />
+  <xs:element name="getLongitudeResponse" type="tns:getLongitudeResponse" />
+  <xs:complexType name="getLongitude">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLongitudeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLatitude">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLatitudeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCarParkCode">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0" />
+      <xs:element name="arg1" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCarParkCodeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CarParkingWSService" targetNamespace="http://service.choreos.eu/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://service.choreos.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.choreos.eu/" schemaLocation="_WSDL_interface_CarParkingWSPortBinding_part_carParkingWS.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getLatitude">
+    <part name="parameters" element="tns:getLatitude">
+    </part>
+  </message>
+  <message name="getLongitude">
+    <part name="parameters" element="tns:getLongitude">
+    </part>
+  </message>
+  <message name="getCarParkCodeResponse">
+    <part name="parameters" element="tns:getCarParkCodeResponse">
+    </part>
+  </message>
+  <message name="getLatitudeResponse">
+    <part name="parameters" element="tns:getLatitudeResponse">
+    </part>
+  </message>
+  <message name="getCarParkCode">
+    <part name="parameters" element="tns:getCarParkCode">
+    </part>
+  </message>
+  <message name="getLongitudeResponse">
+    <part name="parameters" element="tns:getLongitudeResponse">
+    </part>
+  </message>
+  <portType name="CarParkingWS">
+    <operation name="getCarParkCode">
+      <input message="tns:getCarParkCode" wsam:Action="http://service.choreos.eu/CarParkingWS/getCarParkCodeRequest">
+    </input>
+      <output message="tns:getCarParkCodeResponse" wsam:Action="http://service.choreos.eu/CarParkingWS/getCarParkCodeResponse">
+    </output>
+    </operation>
+    <operation name="getLatitude">
+      <input message="tns:getLatitude" wsam:Action="http://service.choreos.eu/CarParkingWS/getLatitudeRequest">
+    </input>
+      <output message="tns:getLatitudeResponse" wsam:Action="http://service.choreos.eu/CarParkingWS/getLatitudeResponse">
+    </output>
+    </operation>
+    <operation name="getLongitude">
+      <input message="tns:getLongitude" wsam:Action="http://service.choreos.eu/CarParkingWS/getLongitudeRequest">
+    </input>
+      <output message="tns:getLongitudeResponse" wsam:Action="http://service.choreos.eu/CarParkingWS/getLongitudeResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="CarParkingWSPortBinding" type="tns:CarParkingWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getCarParkCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLatitude">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLongitude">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CarParkingWSService">
+    <port name="CarParkingWSPort" binding="tns:CarParkingWSPortBinding">
+      <soap:address location="http://batcave:7003/"/>
+    </port>
+  </service>
+</definitions>
