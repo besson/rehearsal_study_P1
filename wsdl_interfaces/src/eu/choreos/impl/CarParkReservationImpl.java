@@ -15,7 +15,6 @@ public class CarParkReservationImpl implements CarParkReservation{
 
 	@Override
 	public String setPassengerInfo(int id, String terminal) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

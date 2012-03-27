@@ -17,4 +17,9 @@ mocks
 real-uri: http://localhost:9002/mocks/flightFinder?wsdl
 petals-uri: http://localhost:8084/petals/services/flightFinderMock?wsdl
 
+proxies
+-----------------------
+** carParkReservation
+real-uri: http://localhost:9003/carParkReservationProxy?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
 
