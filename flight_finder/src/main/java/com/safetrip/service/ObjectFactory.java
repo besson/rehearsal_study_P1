@@ -37,30 +37,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddFlightResponse }
-     * 
-     */
-    public AddFlightResponse createAddFlightResponse() {
-        return new AddFlightResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetFlightResponse }
-     * 
-     */
-    public GetFlightResponse createGetFlightResponse() {
-        return new GetFlightResponse();
-    }
-
-    /**
-     * Create an instance of {@link Flight }
-     * 
-     */
-    public Flight createFlight() {
-        return new Flight();
-    }
-
-    /**
      * Create an instance of {@link AddFlight }
      * 
      */
@@ -74,6 +50,30 @@ public class ObjectFactory {
      */
     public GetFlight createGetFlight() {
         return new GetFlight();
+    }
+
+    /**
+     * Create an instance of {@link Flight }
+     * 
+     */
+    public Flight createFlight() {
+        return new Flight();
+    }
+
+    /**
+     * Create an instance of {@link GetFlightResponse }
+     * 
+     */
+    public GetFlightResponse createGetFlightResponse() {
+        return new GetFlightResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddFlightResponse }
+     * 
+     */
+    public AddFlightResponse createAddFlightResponse() {
+        return new AddFlightResponse();
     }
 
     /**

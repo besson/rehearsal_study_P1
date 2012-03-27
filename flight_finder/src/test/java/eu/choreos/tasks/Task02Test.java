@@ -66,11 +66,11 @@ public class Task02Test {
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// TODO erase and put assertTrue(false);
 		WSClient client = new WSClient(flightFinderWSDL);
-		client.request("getFligthInfo", "A1");
+		client.request("getFlightInfo", "A1");
 		
 		List<Item> messages = webTripMock.getInterceptedMessages();
 		
-		assertEquals("A1", messages.get(0).getChild("arg0").getContent());
+		assertEquals("A1", messages.get(0).getChild("id").getContent());
 	}
 	
 	private static Item getFligthResponse() {
@@ -80,7 +80,7 @@ public class Task02Test {
 		id.setContent("0815"); 
 		flightInformation.addChild(id); 
 		Item time = new ItemImpl("time"); 
-		time.setContent("130pm"); 
+		time.setContent("130p"); 
 		flightInformation.addChild(time); 
 		Item terminal = new ItemImpl("terminal"); 
 		terminal.setContent("8"); 

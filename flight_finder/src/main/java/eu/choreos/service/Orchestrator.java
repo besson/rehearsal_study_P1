@@ -16,10 +16,10 @@ public class Orchestrator implements FlightFinder{
 	@Override
 	public FlightInfo getFlightInfo(String id) {
 		// TODO erase
-		Flight flight = webTrip.getFlight(Integer.parseInt(id));
+		Flight flight = webTrip.getFlight(id);
 		
 		FlightInfo info = new FlightInfo();
-		info.setId(((Integer)flight.getId()).toString());
+		info.setId(flight.getId());
 		info.setCompany(flight.getCompany());
 		info.setDestination(flight.getDestination());
 		info.setTerminal(flight.getTerminal());
