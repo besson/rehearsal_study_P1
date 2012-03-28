@@ -15,5 +15,9 @@
 	<binding.ws wsdlElement="http://service.safetrip.com#wsdl.port(WebTripImplService/WebTripImplPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/webTripMock?wsdl"/>
 </reference>
 
+<reference name="carParkReservation">
+	<binding.ws wsdlElement="http://api.choreos.eu#wsdl.port(CarParkReservation/CarParkReservationPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/carParkReservationProxy?wsdl"/>
+</reference>
+
 </component>
 </composite>

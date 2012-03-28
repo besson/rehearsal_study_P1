@@ -30,6 +30,8 @@ public class FFIntegrationTest {
 		flightFinderWSDL = flightFinder.getUri();
 		
 		MockDeployer.deployWebTripMock(choreography);
+		deployInteractiveGuideProxy();
+		deployCarParkReservationProxy();
 	}
 	
 	@AfterClass
@@ -51,6 +53,21 @@ public class FFIntegrationTest {
 		List<Item> messages = interceptor.getMessages();
 		
 		assertEquals("A1", messages.get(0).getChild("arg0").getContent());
+	}
+	
+	private static void deployInteractiveGuideProxy() throws Exception {
+		Service interactiveGuide = choreography.getServicesForRole("interactiveGuide").get(0); 
+		MessageInterceptor interceptor = new MessageInterceptor("6001");
+		interceptor.interceptTo(interactiveGuide.getUri());
+	}
+	
+	private static void deployCarParkReservationProxy() throws Exception {
+		Service carParkReservation = choreography.getServicesForRole("carParkReservation").get(0);
+		String carParkReservationWSDL = carParkReservation.getUri();
+		
+		// TODO erase and add assertTrue(false)
+		MessageInterceptor interceptor = new MessageInterceptor("6003");
+		interceptor.interceptTo(carParkReservationWSDL);
 	}
 	
 

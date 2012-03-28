@@ -62,9 +62,7 @@ public class Task02Test {
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
-
 		// TODO erase
-		
 		WSClient client = new WSClient(carParkReservationWSDL);
 		
 		Item setPassengerInfo = new ItemImpl("setPassengerInfo"); 

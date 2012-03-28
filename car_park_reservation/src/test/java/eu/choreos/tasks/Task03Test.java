@@ -63,15 +63,12 @@ public class Task03Test {
 	}
 	
 	private static void deployWebTripMock()throws Exception{
-		//Retrieve the wsdl uri of the car parking ws
 		Service flightFinder = choreography.getServicesForRole("flightFinder").get(0);		
 		
 		Service service = flightFinder.getServicesForRole("flightFinder").get(0);
 		String webTripWSDL = service.getUri();
 				
-		// create the Mock here
 		WSMock webTripMock = new WSMock("mocks/webTrip", webTripWSDL, "4321", true);
-		
 		MockResponse response = new MockResponse().whenReceive("A1").replyWith(getFligthResponse());
 				
 		webTripMock.returnFor("getFlight", response);

@@ -15,5 +15,9 @@
 	<binding.ws wsdlElement="http://service.choreos.eu#wsdl.port(CarParkingWSService/CarParkingWSPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/carParkingWSProxy?wsdl"/>
 </reference>
 
+<reference name="interactiveGuide">
+	<binding.ws wsdlElement="http://api.choreos.eu#wsdl.port(InteractiveGuide/InteractiveGuidePort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/interactiveGuideProxy?wsdl"/>
+</reference>
+
 </component>
 </composite>

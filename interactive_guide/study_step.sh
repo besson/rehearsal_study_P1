@@ -5,6 +5,7 @@ DEPENDENCY="FlightFinder"
 PETALS_HOME="/home/rehearsal/study/tools/petals-platform-3.1.3"
 SAS_DIR="/home/rehearsal/workspace/rehearsal-study/petals_service-units/sas"
 
+echo "Trying to clean petals files..."
 rm  "$PETALS_HOME"/installed/sa-SOAP-"$DEPENDENCY"*
 
 if [ "$1" == "02" ]; then
@@ -27,6 +28,8 @@ if [ "$1" == "04" ]; then
 fi
 
 sleep 10
+
+echo
 
 LIB="$HOME/.m2/repository/com/orientechnologies/orient-commons/1.0rc5/orient-commons-1.0rc5.jar:$HOME/.m2/repository/com/orientechnologies/orientdb-core/1.0rc5/orientdb-core-1.0rc5.jar"
 
