@@ -24,15 +24,23 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetFlightInfoArg0_QNAME = new QName("http://api.choreos.eu/", "arg0");
     private final static QName _GetFlightInfo_QNAME = new QName("http://api.choreos.eu/", "getFlightInfo");
     private final static QName _GetFlightInfoResponse_QNAME = new QName("http://api.choreos.eu/", "getFlightInfoResponse");
-    private final static QName _GetFlightInfoArg0_QNAME = new QName("http://api.choreos.eu/", "arg0");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: eu.choreos.api
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetFlightInfo }
+     * 
+     */
+    public GetFlightInfo createGetFlightInfo() {
+        return new GetFlightInfo();
     }
 
     /**
@@ -44,11 +52,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetFlightInfo }
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    public GetFlightInfo createGetFlightInfo() {
-        return new GetFlightInfo();
+    @XmlElementDecl(namespace = "http://api.choreos.eu/", name = "arg0", scope = GetFlightInfo.class)
+    public JAXBElement<String> createGetFlightInfoArg0(String value) {
+        return new JAXBElement<String>(_GetFlightInfoArg0_QNAME, String.class, GetFlightInfo.class, value);
     }
 
     /**
@@ -67,15 +76,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://api.choreos.eu/", name = "getFlightInfoResponse")
     public JAXBElement<GetFlightInfoResponse> createGetFlightInfoResponse(GetFlightInfoResponse value) {
         return new JAXBElement<GetFlightInfoResponse>(_GetFlightInfoResponse_QNAME, GetFlightInfoResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://api.choreos.eu/", name = "arg0", scope = GetFlightInfo.class)
-    public JAXBElement<String> createGetFlightInfoArg0(String value) {
-        return new JAXBElement<String>(_GetFlightInfoArg0_QNAME, String.class, GetFlightInfo.class, value);
     }
 
 }
