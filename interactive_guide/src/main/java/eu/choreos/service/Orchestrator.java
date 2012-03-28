@@ -4,23 +4,24 @@ import org.osoa.sca.annotations.Reference;
 
 import eu.choreos.CarParkEntry;
 import eu.choreos.FlightEntry;
-import eu.choreos.FlightFinder;
-import eu.choreos.FlightInfo;
+import eu.choreos.api.FlightFinderPortType;
 import eu.choreos.api.InteractiveGuide;
+import eu.choreos.model.FlightInfo;
 import eu.choreos.persistence.DAO;
 
 public class Orchestrator implements InteractiveGuide{
 	
 	@Reference
-	private FlightFinder flightFinder;
+	private FlightFinderPortType flightFinder;
 	
 	@Override
 	public String calculateLocations(String id) {
 		FlightInfo pFlight = flightFinder.getFlightInfo(id);
+				
 		
 		FlightEntry entry = new FlightEntry();
 		entry.setpId(id);
-		entry.setInfo(pFlight);
+		entry.setTerminal(pFlight.getTerminal().getValue());
 		
 		DAO.addFlightInfo(entry);
 		return "Calculation in progress";
@@ -28,7 +29,7 @@ public class Orchestrator implements InteractiveGuide{
 
 	@Override
 	public String getFlightAndCarParkLocation(String id) {
-		String terminal = DAO.getFlightInfo(id).getInfo().getTerminal();
+		String terminal = DAO.getFlightInfo(id).getTerminal();
 		String carParkId = DAO.getCarParkEntry(id).getCpId();
 		String message = "You have to go to terminal " + terminal + ";" + "Turn the first right and Go straight for 2 blocks ; " + "Park your car in vacancy " + carParkId ;
 		return message;

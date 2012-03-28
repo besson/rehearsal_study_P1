@@ -7,10 +7,9 @@ import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 
 import eu.choreos.CarParkEntry;
 import eu.choreos.FlightEntry;
-import eu.choreos.FlightInfo;
+import eu.choreos.model.FlightInfo;
 
 public class DAO {
-	
 	
 	private static ODatabaseObjectTx getInstance(){
 		ODatabaseObjectTx db = new ODatabaseObjectTx("local:./db/passengerItinerary");

@@ -12,7 +12,7 @@
 </service>
 
 <reference name="flightFinder">
-	<binding.ws wsdlElement="http://impl.choreos.eu#wsdl.port(FlightFinderImplService/FlightFinderImplPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/flightFinderMock?wsdl"/>
+	<binding.ws wsdlElement="http://api.choreos.eu#wsdl.port(FlightFinder/FlightFinderPort)" wsdli:wsdlLocation="http://localhost:8084/petals/services/flightFinderMock?wsdl"/>
 </reference>
 
 </component>
