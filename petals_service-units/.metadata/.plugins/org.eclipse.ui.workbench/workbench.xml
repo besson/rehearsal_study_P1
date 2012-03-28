@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
 <window height="769" maximized="true" width="1020" x="386" y="278">
 <fastViewData fastViewLocation="1024"/>
@@ -13,7 +13,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="48" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="48" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="30"/>
 <coolItem id="com.ebmwebsourcing.petals.common.petals-toolbar" itemType="typeToolBarContribution" x="40" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
@@ -26,15 +26,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.ebmwebsourcing.petals.services.formeditor" name="jbi.xml" partName="su-SOAP-FlightFinderMock-provide" path="/media/stuff/workspace/CHOReOS/rehearsal-study/petals_service-units/su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml" title="su-SOAP-FlightFinderMock-provide" tooltip="su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug"/>
@@ -234,17 +229,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" path="/su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" path="/su-SOAP-FlightFinderMock-consume/src/main/jbi/jbi.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" path="/su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml"/>
-</editors>
-<item historyLabel="su-SOAP-FlightFinderMock-provide" index="0"/>
-<item historyLabel="su-SOAP-FlightFinderMock-consume" index="1"/>
-<item historyLabel="su-SOAP-FlightFinderMock-provide" index="2"/>
-<item active="true" historyLabel="su-SOAP-FlightFinderMock-provide" index="2"/>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -261,6 +246,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" name="jbi.xml" tooltip="su-SOAP-CarParkReservationProxy-consume/src/main/jbi/jbi.xml">
+<persistable path="/su-SOAP-CarParkReservationProxy-consume/src/main/jbi/jbi.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" name="jbi.xml" tooltip="su-SOAP-CarParkReservationProxy-provide/src/main/jbi/jbi.xml">
+<persistable path="/su-SOAP-CarParkReservationProxy-provide/src/main/jbi/jbi.xml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ebmwebsourcing.petals.services.formeditor" name="jbi.xml" tooltip="su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml">
 <persistable path="/su-SOAP-FlightFinderMock-provide/src/main/jbi/jbi.xml"/>
 </file>
