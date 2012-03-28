@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
