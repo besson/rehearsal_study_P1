@@ -11,7 +11,7 @@ public class CarParkingWS {
 		//TODO: Erase
 		ParkSafe system = new ParkSafe();
 		
-		return system.getCarParkPlace(customerId, "8");
+		return system.getCarParkPlace(customerId, terminal);
 	}
 	
 	public String getLatitude (String carParkId){

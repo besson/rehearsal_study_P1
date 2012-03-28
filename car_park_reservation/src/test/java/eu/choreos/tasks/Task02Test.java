@@ -44,7 +44,7 @@ public class Task02Test {
 		// input: A1, 8 (see the contract of carParkReservation by using the item explorer)
 		// output: "OK"
 		
-		// TODO: erase
+		// TODO: erase and put assertTrue(false)
 		WSClient client = new WSClient(carParkReservationWSDL);
 		
 		Item setPassengerInfo = new ItemImpl("setPassengerInfo"); 

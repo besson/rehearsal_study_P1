@@ -18,7 +18,6 @@ public class Orchestrator implements InteractiveGuide{
 	public String calculateLocations(String id) {
 		FlightInfo pFlight = flightFinder.getFlightInfo(id);
 				
-		
 		FlightEntry entry = new FlightEntry();
 		entry.setpId(id);
 		entry.setTerminal(pFlight.getTerminal().getValue());
