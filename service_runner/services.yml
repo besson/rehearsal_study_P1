@@ -1,11 +1,7 @@
 mocks:
-  - real: http://localhost:8002/services/flightFinder?wsdl
-    name: mocks/flightFinder
-    port: 9002
-
-  - real: file:///home/besson/workspace/CHOReOS/rehearsal-study/wsdl_interfaces/resources/webTrip/webTrip.wsdl
-    name: webTripMock
-    port: 4321
+  - real: http://localhost:8003/services/carParkReservation?wsdl
+    name: test
+    port: 4509 
 
 proxies:
   - real: http://localhost:8003/services/carParkReservation?wsdl
