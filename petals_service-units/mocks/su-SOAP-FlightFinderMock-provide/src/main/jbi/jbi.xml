@@ -4,10 +4,9 @@
 	Originally created for the version 4.0 of the component.
  -->
 <jbi:jbi version="1.0" 
-	xmlns:interfaceNs="http://choreos.eu/"
+	xmlns:generatedNs="http://api.choreos.eu/"
 	xmlns:jbi="http://java.sun.com/xml/ns/jbi"
 	xmlns:petalsCDK="http://petals.ow2.org/components/extensions/version-5"
-	xmlns:serviceNs="http://impl.choreos.eu/"
 	xmlns:soap="http://petals.ow2.org/components/soap/version-4"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	
@@ -16,9 +15,9 @@
 	
 		<!-- Import a Service into Petals => provides a Service. -->
 		<jbi:provides 		
-			interface-name="interfaceNs:FlightFinder"
-			service-name="serviceNs:FlightFinderImplService"
-			endpoint-name="FlightFinderImplPort">
+			interface-name="generatedNs:FlightFinderPortType"
+			service-name="generatedNs:FlightFinder"
+			endpoint-name="FlightFinderPort">
 	
 			<!-- CDK specific elements -->
 			<petalsCDK:timeout>30000</petalsCDK:timeout>

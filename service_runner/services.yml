@@ -1,5 +1,5 @@
 mocks:
-  - real: file:///home/besson/workspace/CHOReOS/rehearsal-study/wsdl_interfaces/resources/flightFinder/flightFinder.wsdl
+  - real: http://localhost:8002/services/flightFinder?wsdl
     name: mocks/flightFinder
     port: 9002
 
