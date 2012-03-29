@@ -1,0 +1,158 @@
+body {
+	width: 960px;
+	margin: 0 auto;
+	font: 100%/1.6em "Century Gothic", "centurygothic", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, pre, code, blockquote,
+ul, ol, dl, dt, dd {
+	margin: 0 0 .5em 0;
+}
+
+h1 {
+color:#FFF;
+font-size:2em;}
+
+h2 {font-size:1.6em;}
+h3 {font-size:1.4em;}
+h4 {font-size:1.2em;}
+h5 {font-size:1em;}
+h6 {font-size:1em;}
+
+blockquote {
+	border-left: solid .25em #EEE;
+	font: italic 1.6em/1em Georgia, sans-serif;
+	padding: 0 0 .5em .5em;
+}
+
+header {
+	padding: 1em 1em 0;
+	margin: 0 14px 1em 0;
+	background: #000077;
+	font: 100%/1.6em "Century Gothic", "centurygothic", sans-serif;
+	border: solid thick black;
+    	border-radius: 1em;
+}
+
+header nav.bar, footer {
+	clear: both;
+}
+
+header:after, footer:before,
+header nav.bar:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 1px;
+	visibility: hidden;
+}
+
+header aside {
+	margin: 0;
+}
+
+nav.bar {
+	margin: 0 -1em;
+	padding: 0 1em;
+	background: #CCC;
+}
+
+nav.bar ul {
+	padding: 0;
+	margin: 0;
+}
+
+nav.bar li {
+	margin: 0;
+}
+
+nav.bar a {
+	color: #000;
+	font-weight: bold;
+	line-height: 2em;
+	margin: .25em 0 -2px 0;
+	padding: 0 1em;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #FFF;
+}
+
+nav.bar a:hover {
+	background: #FFF;
+}
+
+body > section {
+	float: left;
+	padding: 14px;
+	margin: 0 14px 1em 0;
+	border: solid thick black;
+    	border-radius: 1em;
+}
+
+body > aside {
+	width: 300px;
+	padding: 0 0 0 15px;
+	margin: 0 0 0 15px;
+}
+
+article {
+	position: relative;
+}
+
+article > aside.left {
+	left: 0px;
+	margin: 0 0 0 0;	
+}
+
+article > hgroup {
+	margin: 0 0 1em 0;
+}
+
+article > hgroup h3,
+article > hgroup h4 {
+	font-weight: normal;
+}
+
+article > hgroup h3 {
+	border-bottom: dotted 1px #CCC;
+	margin: 0; padding: 0;
+}
+
+article > hgroup h4 {
+	font-size: 1em;
+	font-style: italic;
+	position: absolute;
+	text-align: right;
+	width: 100%;
+	top: 0;
+}
+
+article section aside {
+	width: 168px;
+	border: solid 1px #CCC;
+	padding: .5em;
+}
+
+article section aside blockquote {
+	font-size: 1.2em;
+	margin: 0; padding: 0 0 0 .5em;
+}
+
+figure img {
+	border: solid 1px #CCC;
+	height: auto;
+	margin: 0 -1px .25em;
+	width: 100%;
+}
+
+ul {
+	padding: 0 0 0 1em;
+}
+
+footer {
+	border-top: dashed 1px #CCC;
+	padding: 1em;
+	font-size: .8em;
+	text-align: center;
+}
+

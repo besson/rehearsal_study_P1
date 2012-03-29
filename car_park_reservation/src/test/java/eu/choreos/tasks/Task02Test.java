@@ -32,52 +32,21 @@ public class Task02Test {
 		Service service = carParkReservation.getServicesForRole("carParkReservation").get(0);
 		String carParkingWSWSDL = service.getUri();
 		
-		//create the interceptor here
-		//TODO erase
-		interceptor = new MessageInterceptor("7003");
-		interceptor.interceptTo(carParkingWSWSDL);
-		
 	}
 	
 	@Test
 	public void shouldReturnAConfirmationMessageForSetPassengerInfoOperation() throws Exception {
-		// input: A1, 8 (see the contract of carParkReservation by using the item explorer)
+		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 		// output: "OK"
 		
-		// TODO: erase and put assertTrue(false)
-		WSClient client = new WSClient(carParkReservationWSDL);
-		
-		Item setPassengerInfo = new ItemImpl("setPassengerInfo"); 
-		Item arg1 = new ItemImpl("arg1"); 
-		arg1.setContent("A1"); 
-		setPassengerInfo.addChild(arg1); 
-		Item arg0 = new ItemImpl("arg0"); 
-		arg0.setContent("8"); 
-		setPassengerInfo.addChild(arg0);
-		
-		Item response = client.request("setPassengerInfo", setPassengerInfo);
-		
-		assertEquals("OK", response.getChild("return").getContent());
+		assertTrue(false);
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
+		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 		// TODO erase
-		WSClient client = new WSClient(carParkReservationWSDL);
-		
-		Item setPassengerInfo = new ItemImpl("setPassengerInfo"); 
-		Item arg1 = new ItemImpl("arg1"); 
-		arg1.setContent("A1"); 
-		setPassengerInfo.addChild(arg1); 
-		Item arg0 = new ItemImpl("arg0"); 
-		arg0.setContent("8"); 
-		setPassengerInfo.addChild(arg0);
-		
-		client.request("setPassengerInfo", setPassengerInfo);
-		
-		List<Item> messages = interceptor.getMessages();
-		
-		assertEquals("A1", messages.get(0).getChild("arg1").getContent());
-		assertEquals("8", messages.get(0).getChild("arg0").getContent());
+
+		assertTrue(false);
 	}
 }

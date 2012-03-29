@@ -36,24 +36,11 @@ public class Task03Test {
 	
 	@Test
 	public void shouldSendCarParkInfoToInteractiveGuideCorrectly() throws Exception {
-		// input: A1, 8 (see the contract of carParkReservation by using the item explorer)
+		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 
-		//create the interceptor here
-		//TODO erase and put assertTrue(false);
-		MessageInterceptor interceptor = new MessageInterceptor("6001");
-		interceptor.interceptTo(interactiveGuideWSDL);
+		//complete the code below by creating the interceptor and invoking the setPassengerInfo
+		MessageInterceptor interceptor = null;
 		
-		WSClient client = new WSClient(carParkReservationWSDL);
-		
-		Item setPassengerInfo = new ItemImpl("setPassengerInfo"); 
-		Item arg1 = new ItemImpl("arg0"); 
-		arg1.setContent("A1"); 
-		setPassengerInfo.addChild(arg1); 
-		Item arg0 = new ItemImpl("arg1"); 
-		arg0.setContent("8"); 
-		setPassengerInfo.addChild(arg0);
-		
-		client.request("setPassengerInfo", setPassengerInfo);
 		
 		List<Item> messages = interceptor.getMessages();
 		

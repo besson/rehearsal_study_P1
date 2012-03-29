@@ -1,0 +1,107 @@
+<html>
+<link rel="stylesheet" href="sample.css" />
+<script src="http://s12.in/jquery/core.js"></script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>Task 03 - Integrate the choreography roles</h1>
+	</hgroup>
+</header>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>Pre-requirements</b></h6>
+</hgroup>
+Deploy the <b>car_parking_ws</b> (service developed in the Task 01) (if not running). This can be done by running the
+class <em>car_parking_ws/src/test/java/eu/choreos/common/ServiceDeployer.java</em>
+</article>
+</section>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>CarParkReservation role</b></h6>
+</hgroup>
+In this task, the process that represents the <b>CarParkReservation</b> role will be intregrated to the <b>InteractiveGuide</b>.
+<br><br>
+<b>Pre-requirements - Setting up the dependencies </b>
+<ol>
+	  <li> Start the interactiveGuide process by going to interactive_guide directory and running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Start the FlightFinder process by going to flight_finder directory and running the command: <pre>./study_task.sh 03</pre></li>
+</ol>
+</ul>
+Please go to the project car_park_reservation:
+<ul>
+<li><span style='color:blue'>all tests</span> must be written on: <em>car_park_reservation/src/test/java/eu/choreos/Task03Test.java</em> </li>
+<li><span style='color:orange'>the web service code</span> must be developed on: <em>car_park_reservation/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+</ul>
+<br>
+<h6>Steps:</h6>
+<hr>
+<ol> 
+<li><span style='color:blue'><b>shouldSendCarParkInfoToInteractiveGuideCorrectly()</b></span>
+	<ol>
+	  <li>Create a messageInterceptor to intercept the messages sent to the interactiveGuide. The port used for the interceptor is the <b>6001</b>. </li>
+	  <li>invoke the setPassengerInfo operation and create a test to verify if the message sent to the interactiveGuide process is correct</li>
+	</ol>
+<li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
+	<ol>
+	  <li>Through the <em>@Reference</em> interactiveGuide, call the operation setParkInfo passing the values extracted from the car parking ws (passengerId, carParkId, latitude, longitude). Use the <em>getCarParKEntry(String id, String codeId, String latitude, String longitude)</em> method
+</li>
+	</ol>
+</li>
+<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+<span style='color:green'>(In out methodology, this test can also be applied using first mocks and then the real process which is what we did)</span>
+</li>
+</ol>
+<hr>
+</article>
+</section>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>FlightFinder role</b></h6>
+</hgroup>
+In this task, the process that represents the <b>FlightFinder</b> role will be intregrated to the <b>CarParkReservation</b>.
+<br><br>
+<b>Pre-requirements - Setting up the dependencies </b>
+<ol>
+	  <li> Start the interactiveGuide process by going to interactive_guide directory and running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Start the carParkReservation process by going to car_park_reservation directory and running the command: <pre>./study_task.sh 03</pre></li>
+</ol>
+</ul>
+Please go to the project flight_finder:
+<ul>
+<li><span style='color:blue'>all tests</test> must be written on: <em>flight_finder/src/test/java/eu/choreos/Task03Test.java</em> </li>
+<li><span style='color:orange'>the web service code</test> must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+</ul>
+<br>
+<h6>Steps:</h6>
+<hr>
+<ol> 
+<li><span style='color:blue'><b>shouldForwardPassengerIdAndTerminalToTheCarParkReservation()</b></span>
+	<ol>
+	  <li>Create a message interceptor to intercept the messages sent to the carParkReservation. The port used for this interceptor is the <b>6003</b></li>
+	  <li>Invoke the getFlightInfo operation  and create a test to verify if the message sent to the carParkReservation is correct</li>
+	</ol>
+</li>
+<li><span style='color:orange'><b>getFlightInfo(String id)</b></span>
+	<ol>
+	  <li>Through the <em>@Reference</em> carParkReservation, invoke the operation setPassengerInfo passing the information retrieved from webTrip mock (passengerId, terminal)
+</li>
+	</ol>
+</li>
+<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+</li>
+</ol>
+<hr>
+</article>
+</section>
+
+
+<center><a href="index.html">Home</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
+</body>
+</html>

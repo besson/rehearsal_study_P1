@@ -35,12 +35,7 @@ public class Task03Test {
 		Service carParkReservation = choreography.getServicesForRole("carParkReservation").get(0);
 		String carParkReservationWSDL = carParkReservation.getUri();
 		
-		// TODO erase and add assertTrue(false)
-		MessageInterceptor interceptor = new MessageInterceptor("6003");
-		interceptor.interceptTo(carParkReservationWSDL);
-		
-		WSClient client = new WSClient(flightFinder.getUri());
-		client.request("getFlightInfo", "A1");
+		MessageInterceptor interceptor = null;
 		
 		List<Item> messages = interceptor.getMessages();
 		

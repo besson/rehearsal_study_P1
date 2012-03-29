@@ -18,11 +18,11 @@ public class Orchestrator implements CarParkReservation{
 	@Override
 	public String setPassengerInfo(String id, String terminal) {
 		
-		String codeId = carParking.getCarParkCode(id, terminal);
-		
-		String latitude =  carParking.getLatitude(codeId);
-		String longitude = carParking.getLongitude(codeId);
-		
+		return null;
+	}
+
+	private CarParkEntry getCarParKEntry(String id, String codeId,
+			String latitude, String longitude) {
 		ObjectFactory factory = new ObjectFactory();
 		CarParkEntry entry = factory.createCarParkEntry();
 
@@ -30,11 +30,7 @@ public class Orchestrator implements CarParkReservation{
 		entry.setPId(factory.createCarParkEntryPId(id));
 		entry.setLatitude(factory.createCarParkEntryLatitude(latitude));
 		entry.setLongitude(factory.createCarParkEntryLongitude(longitude));
-		
-		
-		interactiveGuide.setCarParkInfo(entry);
-		
-		return "OK";
+		return entry;
 	}
 
 }

@@ -34,14 +34,6 @@ public class Task02Test {
 		Service service = flightFinder.getServicesForRole("flightFinder").get(0);
 		String webTripWSDL = service.getUri();
 		
-		// create the Mock here
-		webTripMock = new WSMock("mocks/webTrip", webTripWSDL, "4321", true);
-		
-		MockResponse response = new MockResponse().whenReceive("A1").replyWith(getFligthResponse());
-		
-		webTripMock.returnFor("getFlight", response);
-		webTripMock.start();
-
 	}
 	
 	@Test
@@ -49,28 +41,12 @@ public class Task02Test {
 		// input passengerId = A1
 		// output a FlightInfo object with the following attributes: id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8 
 		
-		// TODO erase and put assertTrue(false);
-		WSClient client = new WSClient(flightFinderWSDL);
-		Item response = client.request("getFlightInfo", "A1");
-		
-		Item flightInfo = response.getChild("return");
-		
-		assertEquals("0815", flightInfo.getChild("id").getContent());
-		assertEquals("130p", flightInfo.getChild("time").getContent());
-		assertEquals("8", flightInfo.getChild("terminal").getContent());
-		assertEquals("AA", flightInfo.getChild("company").getContent());
-		assertEquals("Paris", flightInfo.getChild("destination").getContent());
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// TODO erase and put assertTrue(false);
-		WSClient client = new WSClient(flightFinderWSDL);
-		client.request("getFlightInfo", "A1");
 		
-		List<Item> messages = webTripMock.getInterceptedMessages();
-		
-		assertEquals("A1", messages.get(0).getChild("id").getContent());
 	}
 	
 	private static Item getFligthResponse() {

@@ -1,0 +1,132 @@
+<html>
+<link rel="stylesheet" href="sample.css" />
+<script src="http://s12.in/jquery/core.js"></script>
+</head>
+<body>
+<header>
+	<hgroup>
+		<h1>Task 02 - Create the process to provide the choreography roles</h1>
+	</hgroup>
+</header>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>Pre-requirements</b></h6>
+</hgroup>
+Deploy the <b>car_parking_ws</b> (service developed in the Task 01). This can be done by running the
+class <em>car_parking_ws/src/test/java/eu/choreos/common/ServiceDeployer.java</em>
+</article>
+</section>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>CarParkReservation role</b></h6>
+</hgroup>
+In this task, the process that represents the <b>CarParkReservation</b> role will be created.
+<br><br>
+Please go to the project car_park_reservation:
+<ul>
+<li><span style='color:blue'>all tests</span> must be written on: <em>car_park_reservation/src/test/java/eu/choreos/Task02Test.java</em></li>
+<li><span style='color:orange'>the process code </span>must be developed on: <em>car_park_reservation/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+</ul>
+<br>
+<h6>Steps:</h6>
+<hr>
+<ol> 
+<li><span style='color:blue'><b>setUp()</b></span>
+	<ol>
+	  <li> Read how the service URI's are extracted from the abstract choreography objects</li>
+	</ol>
+</li>
+<li><span style='color:blue'><b>shouldReturnAConfirmationMessageForSetPassengerInfoOperation()</b></span>
+	<ol>
+	  <li> Write a test for the <em>setPassengerInfo</em> operation. Use the choreography object to retrieve the service URI's and WSClient to invoke the operation</li>
+	</ol>
+</li>
+<li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
+	<ol>
+	  <li>Code the simplest code possible to make this test case succeed</li>
+	</ol>
+</li>
+<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 02<pre></li>
+<span style='color:green'>(even being simple, this test is good to assure that the environment is configured and working correctly)</span>
+</li>
+<li><span style='color:blue'><b>shouldTheCorrectMessageToTheCarParkingService()</b></span>
+	<ol>
+	  <li> Create a MessageInterceptor to intercept the messages received by the service car_parking_ws. The interceptor must be deployed in the port <b>7003</b>. This can be create in the setUp() method</li>
+	  <li>Write a test that invokes the <em>setPassengerInfo</em> operation and validates the message received by car_parking_ws. Inside the composition,  the data received by <em>setPassengerInfo</em> must be forwarded to car_parking_ws. Thus, verify if the intercepted message contains these data.
+	  </li>
+        </ol>
+</li>
+<li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
+	<ol>
+	  <li>integrate the car_parking_ws service into the composition. Through the carParking <em>@Reference</em>, invoke the operations: <em>getParkCode, getLatitude and getLongitude</em> and store the returned data
+	  </li>
+	</ol>
+</li>
+<li>Stop the process and run it again: <pre>$ ./study_task.sh 02<pre></li>
+<span style='color:green'>(3 messages will be sent to the service, it is recomended to validate all of them, but to simplify the study we are validating only one)</span>
+</li>
+</ol>
+<hr>
+</article>
+</section>
+
+<section>
+<article>
+<hgroup>
+	<h6><b>FlightFinder role</b></h6>
+</hgroup>
+In this task, the process that represents the <b>FlightFinder</b> role will be created.
+<br><br>
+Please go to the project flight_finder:
+<ul>
+<li>all tests must be written on: <em>flight_finder/src/test/java/eu/choreos/Task02Test.java</em> </li>
+<li>the web service code must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+</ul>
+<br>
+<h6>Steps:</h6>
+<hr>
+<ol>
+<li><span style='color:blue'><b>setUp()</b></span>
+	<ol>
+	  <li> Read how the service URI's are extracted from the abstract choreography objects</li>
+	</ol>
+</li>
+<li><span style='color:blue'><b>shouldReturnTheFlightInformationForTheGetFlightInfoOperation() </b></span>
+	<ol>
+	  <li> Write a test for the <em>getFlightInfo</em> operation. Use the choreography object to retrieve the service URI's and WSClient to invoke the operation </li>
+	</ol>
+</li>	  
+<li><span style='color:orange'><b>getFlightInfo(String id)</b></span>
+<ol>
+<li> Code the simplest code possible to make this test case succeed. Create a dummy FlightInfo object</li>
+</ol>
+<li>Run the following command to compile and deploy the process:<pre>./study_task.sh 02</pre></li>
+<li><span style='color:blue'><b>shouldReturnTheFlightInformationForTheGetFlightInfoOperation</b></span>
+	<ol>
+	  <li>Create a mock-interceptor for the webTrip WS. The wsdl of this WS can be retrived from the choreography object. The mock must contain the following characteristics:
+		<ul>
+			<li><b>Mock URI:</b> <em>http://localhost:4321/webTripMock?wsdl</em></li>
+			<li><b>input:</b> "A1" </li>
+			<li><b>output:</b> use the getFligthResponse() method </li> 
+		</ul>
+	  </li>
+	  <li>Write a test that invokes the <em>getFlightInfo</em> operation and validate the message received by the mock</li>
+	</ol>
+</li>
+<li><span style='color:blue'><b>getFlightInfo(String id)</b></span>
+	<ol>
+	  <li>Integrate the mocked service into the process. The webTrip <em>@Reference</em> represents this mocked service. This must be done inside the <em>getFlightInfo</em> operation. The type returned by process is a FlightInfo object. This object must be build based on the object returned by the webTrip WS </li>
+	</ol>
+</li>
+<li>Stop the process and run it again: <pre>$ ./study_task.sh 02<pre></li>
+</ol>
+</hr>
+</article>
+</section>
+<center><a href="index.html">Home</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
+</body>
+</html>
