@@ -1,4 +1,4 @@
-package eu.choreos;
+package br.batcave;
 
 import javax.xml.ws.Endpoint;
 
