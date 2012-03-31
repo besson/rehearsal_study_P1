@@ -1,8 +1,8 @@
 mocks:
-  - real: http://localhost:8003/services/carParkReservation?wsdl
-    name: test
-    port: 4509 
+  - real: http://localhost:1234/greetingAWS?wsdl
+    name: greetingAWSMock
+    port: 5000
 
 proxies:
-  - real: http://localhost:8003/services/carParkReservation?wsdl
-    port: 6003
+  - real: http://localhost:1234/greetingAWS?wsdl 
+    port: 6000

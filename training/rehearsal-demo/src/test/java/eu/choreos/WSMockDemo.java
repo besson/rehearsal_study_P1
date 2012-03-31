@@ -1,15 +1,10 @@
 package eu.choreos;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 import eu.choreos.vv.clientgenerator.Item;
-import eu.choreos.vv.clientgenerator.ItemImpl;
 import eu.choreos.vv.clientgenerator.WSClient;
 import eu.choreos.vv.servicesimulator.MockResponse;
 import eu.choreos.vv.servicesimulator.WSMock;
@@ -22,6 +17,7 @@ public class WSMockDemo {
 	public void shouldChangeTheNameIfItIsJohn() throws Exception {
 	
 		WSMock mock = new WSMock("greetingAWSMock", "http://localhost:1234/greetingAWS?wsdl","5000", true);
+		// Mock is also used as interceptor
 		
 		MockResponse response = new MockResponse().whenReceive("john").replyWith("hey Mary,");
 		mock.start();
