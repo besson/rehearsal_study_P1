@@ -14,7 +14,7 @@ In this task, the service <b>car_parking_ws</b> will be created based on a legac
 <br>
 <center><img width="700" src="fig/parkSafe.png" /></center>
 <br><br>
-Please import (if not imported) into the eclipse the project ~/workspace/rehearsal-study/project car_parking_ws:
+Please import (if not imported) into the eclipse the projects: <em>car_parking_ws</em> and <em>park_safe</em>. In the <em>car_parking_ws</em>:
 <ul>
 <li><span style='color:blue'>all test cases </span> must be written on: <em>car_parking_ws/src/test/java/eu/choreos/service/CarParkingWSTest.java</em> </li>
 <li><span style='color:orange'>the web service code </span> must be developed on: <em>src/main/java/eu/choreos/service/CarParkingWS.java</em></li>
@@ -26,7 +26,7 @@ Please import (if not imported) into the eclipse the project ~/workspace/rehears
 <ol> 
 <li><span style='color:blue'><b>shouldReturnTheCarParkCode() </b></span>
 	<ol>
-	  <li> Write a test case for the <em>getCarParkCode(String customerId, String terminal)</em> operation using WSClient</li>
+	  <li> Using WSClient, write a test case that invokes and validate the response of <em>getCarParkCode(String customerId, String terminal)</em> operation. This operation belongs to the car_parking_ws</li>
          </ol>
 </li>
 <li><span style='color:orange'><b>String getCarParkCode (String customerId, String terminal)</b></span>
