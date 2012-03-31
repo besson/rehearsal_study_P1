@@ -1,3 +1,4 @@
+<html>
 <link rel="stylesheet" href="sample.css" />
 <script src="http://s12.in/jquery/core.js"></script>
 </head>
@@ -10,7 +11,7 @@
 
 <section>
 <article>
-This page describes all the development steps the subjects must follow to implement the four development tasks of the proposed study. A <a href="">virtual machine</a> containing all needed tools and software dependencies was create. Each group may execute the tasks below in an instance of this virtual machine.
+This page describes a development guide that the developers must follow to implement the four development tasks of the proposed study. A <a href="http://valinhos.ime.usp.br:54080/rehearsal/rehearsal-study.ova">virtual machine</a> containing all needed tools and software dependencies was created. Each group will execute the tasks below in an instance of this virtual machine.
 </article>
 </section>
 
@@ -19,12 +20,17 @@ This page describes all the development steps the subjects must follow to implem
 <hgroup>
 	<h3><b>Introduction</b></h3>
 </hgroup>
-Before starting the tasks below, please start the Petals ESB by running:
+<b>Thanks for attending this study =] </b><br>
+During the study, fell free to ask about any doubt or problem anytime. In the page <a href="info.html"><span style='color:blue'>info</span></a> you can find
+information about the Virtual Machine, the path of tools in the VM, and about the URIs where mocks and interceptors must be deployed. This last information are also provided
+in the descriptions of the development tasks. Please execute the tasks in order. <br> <br> <br>
+ 
+<b>Before starting the tasks below, please start the Petals ESB by running:</b>
 <pre>
 $ /home/rehearsal/study/tools/petals-platform-3.1.3/bin/startup.sh
 </pre>
 
-Petals must be running during the entire study. After start Petals, please start the development of the choreography by chosing the <b>Task 01 </b>. Each task represents a phase of our proposed TDD methodology for web service choreographies.
+Petals must be running during the entire study. Please start the development of the choreography by cllicking on the <b>Task 01 </b>. Each task represents a phase of our proposed TDD methodology for web service choreographies.
 
 <br> <br>
 
@@ -36,3 +42,6 @@ Petals must be running during the entire study. After start Petals, please start
 </ul>
 </article>
 </section>
+
+</body>
+</html>

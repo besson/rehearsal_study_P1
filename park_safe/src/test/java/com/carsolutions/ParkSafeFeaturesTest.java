@@ -16,7 +16,8 @@ public class ParkSafeFeaturesTest {
 	
 	@BeforeClass
 	public static void setUp() throws Exception{
-		system = new ParkSafe(false);
+		system = new ParkSafe();
+		system.enableDevelopmentMode();
 		customer1 = new Client("1", "John", "Mayer", "Matao 1001 street");
 	}
 	

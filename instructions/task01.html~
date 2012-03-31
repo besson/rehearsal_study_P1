@@ -41,7 +41,7 @@ Please go to the project car_parking_ws:
 </li>
 <li><span style='color:orange'><b>getLatitude(String carParkId)</b></span>
 	<ol>
-	  <li>Develop the <em>getLatitude(String carParkId)</em> operation</li>
+	  <li>Develop this operation</li>
 	</ol>
 </li>
 <li><span style='color:blue'><b>shouldReturnTheLongitude()</b></span>
@@ -51,12 +51,12 @@ Please go to the project car_parking_ws:
 </li>
 <li><span style='color:orange'><b>getLongitude(String carParkId)</b></span>
 	<ol>
-	  <li>Develop the <em>getLongitude(String carParkId)</em> operation</li>
+	  <li>Develop this operation</li>
 	</ol>
 </li>
 </ol>
 <hr>
 </section>
-<center><a href="index.html">Home</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
+<center><a href="index.html">Home</a> | <a href="info.html">Info</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
 </body>
 </html>

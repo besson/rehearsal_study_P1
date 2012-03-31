@@ -13,15 +13,9 @@ public class ParkSafe {
 	private HashMap<String, Client> clients;
 	private HashMap<String, String> carParkPlaces;
 	
-	public ParkSafe(boolean productionMode){
-		if (productionMode){
-			clients = loadClients();
-			carParkPlaces = loadCarParks();
-		}
-		else{
-			clients = new HashMap<String, Client>();
-			carParkPlaces = new HashMap<String, String>();
-		}
+	public void enableDevelopmentMode(){
+		clients = new HashMap<String, Client>();
+		carParkPlaces = new HashMap<String, String>();
 	}
 	
 	public ParkSafe() {
@@ -81,7 +75,4 @@ public class ParkSafe {
 		
 		return ePlaces;
 	}
-	
-	
-
 }

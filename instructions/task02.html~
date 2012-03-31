@@ -47,7 +47,7 @@ Please go to the project car_park_reservation:
 </li>
 <li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
 	<ol>
-	  <li>Code the simplest code possible to make this test case succeed in the setPassengerInfo method </li>
+	  <li>Code the simplest code possible to make this test case succeed</li>
 	</ol>
 </li>
 <li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 02<pre></li>

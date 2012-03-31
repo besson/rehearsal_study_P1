@@ -95,7 +95,6 @@ Please go to the project flight_finder:
 	</ol>
 </li>
 <li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
-<span style='color:green'>(In out methodology, this test can also be applied using first mocks and then the real process which is what we did)</span>
 </li>
 </ol>
 <hr>
