@@ -1,0 +1,27 @@
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" 	
+				  xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance" name="greeting" 
+				  targetNamespace="http://frascati.ow2.org/greeting">
+  
+  <service name="greeting" promote="orchestrator/greeting">
+    <binding.ws uri="http://localhost:9080/greeting"/>
+  </service>
+  
+  <component name="orchestrator">
+    <implementation.java class="br.batcave.services.Orchestrator"/>
+    
+    <service name="greeting">
+      <interface.java interface="br.batcave.api.Greeting"/>
+    </service>
+    
+    <reference name="greetingA">
+      <binding.ws wsdlElement="http://batcave.br#wsdl.port(GreetingAWSService/GreetingAWSPort)" 
+      wsdli:wsdlLocation="http://localhost:8084/petals/services/greetingAWSMock?wsdl"/>
+    </reference>
+    
+    <reference name="greetingB">
+      <binding.ws wsdlElement="http://batcave.br#wsdl.port(GreetingBWSService/GreetingBWSPort)" 
+      wsdli:wsdlLocation="http://localhost:4321/greetingBWS?wsdl"/>
+    </reference>
+    
+  </component>
+</composite>
