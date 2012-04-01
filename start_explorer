@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd item_explorer
+mvn exec:java
