@@ -41,6 +41,8 @@ public class ArrivalAtAirportAcceptanceTest {
 	
 	@Test
 	public void shouldReturnTerminalAndCarParkLocation() throws Exception {
+		// in spite of its name, the getFlightAndCarParkLocation() method returns the terminal and car park location
+		
 		client.request("calculateLocations", "A1");
 		Item response = client.request("getFlightAndCarParkLocation", "A1");
 		
