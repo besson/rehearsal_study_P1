@@ -8,6 +8,8 @@ SAS_DIR="/home/rehearsal/workspace/rehearsal-study/petals_service-units/sas"
 echo "Trying to clean petals files..."
 rm  "$PETALS_HOME"/installed/sa-SOAP-"$DEPENDENCY"*
 
+sleep 05
+
 if [ "$1" == "02" ]; then
 
   cp  "$SAS_DIR"/sa-SOAP-"$DEPENDENCY"Mock-* "$PETALS_HOME/install"

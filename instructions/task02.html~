@@ -26,7 +26,7 @@ class <em>car_parking_ws/src/test/java/eu/choreos/common/ServiceDeployer.java</e
 </hgroup>
 In this task, the process that represents the <b>CarParkReservation</b> role will be created.
 <br><br>
-Please go to the project car_park_reservation:
+Please import (if not imported) into the eclipse the car_park_reservation project:
 <ul>
 <li><span style='color:blue'>all tests</span> must be written on: <em>car_park_reservation/src/test/java/eu/choreos/Task02Test.java</em></li>
 <li><span style='color:orange'>the process code </span>must be developed on: <em>car_park_reservation/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
@@ -47,15 +47,15 @@ Please go to the project car_park_reservation:
 </li>
 <li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
 	<ol>
-	  <li>Code the simplest code possible to make this test case succeed</li>
+	  <li>Code the simplest code possible to make this test case succeeds</li>
 	</ol>
 </li>
-<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 02<pre></li>
+<li>Inside the car_park_reservation directory, run the following command to compile and deploy the process: <pre>$ ./study_task.sh 02<pre></li>
 <span style='color:green'>(even being simple, this test is good to assure that the environment is configured and working correctly)</span>
 </li>
 <li><span style='color:blue'><b>shouldTheCorrectMessageToTheCarParkingService()</b></span>
 	<ol>
-	  <li> Create a MessageInterceptor to intercept the messages received by the service car_parking_ws. The interceptor must be deployed in the port <b>7003</b>. This can be create in the setUp() method</li>
+	  <li> Create a MessageInterceptor to intercept the messages received by the service car_parking_ws. The interceptor must be deployed in the port <b>7003</b> and must be configured to intercept this web service. This can be create in the setUp() method</li>
 	  <li>Write a test that invokes the <em>setPassengerInfo</em> operation and validates the message received by car_parking_ws. Inside the composition,  the data received by <em>setPassengerInfo</em> must be forwarded to car_parking_ws. Thus, verify if the intercepted message contains these data.
 	  </li>
         </ol>
@@ -127,6 +127,6 @@ Please go to the project flight_finder:
 </hr>
 </article>
 </section>
-<center><a href="index.html">Home</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
+<center><a href="index.html">Home</a> | <a href="info.html">Info</a> | <a href="task01.html">Task 01</a> | <a href="task02.html">Task 02</a> | <a href="task03.html">Task 03</a> | <a href="task04.html">Task 04</a></center>
 </body>
 </html>

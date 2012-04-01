@@ -19,6 +19,7 @@ Please import (if not imported) into the eclipse the projects: <em>car_parking_w
 <li><span style='color:blue'>all test cases </span> must be written on: <em>car_parking_ws/src/test/java/eu/choreos/service/CarParkingWSTest.java</em> </li>
 <li><span style='color:orange'>the web service code </span> must be developed on: <em>src/main/java/eu/choreos/service/CarParkingWS.java</em></li>
 <li>Do not change the signature of the CarParkingWS.java </em></li>
+<li>If you to publish the car_parking_ws, please run the src/test/java/eu/choreos/common/ServiceDeployer.java</li>
 </ul>
 <br>
 <h6>Steps:</h6>
@@ -26,7 +27,7 @@ Please import (if not imported) into the eclipse the projects: <em>car_parking_w
 <ol> 
 <li><span style='color:blue'><b>shouldReturnTheCarParkCode() </b></span>
 	<ol>
-	  <li> Using WSClient, write a test case that invokes and validate the response of <em>getCarParkCode(String customerId, String terminal)</em> operation. This operation belongs to the car_parking_ws.</li>
+	  <li> Using WSClient, write a test case that invokes <em>getCarParkCode(String customerId, String terminal)</em> operation and validates its response. This operation belongs to the car_parking_ws.</li>
          </ol>
 </li>
 <li><span style='color:orange'><b>String getCarParkCode (String customerId, String terminal)</b></span>
@@ -36,7 +37,7 @@ Please import (if not imported) into the eclipse the projects: <em>car_parking_w
 </li>
 <li><span style='color:blue'><b>shouldReturnTheLatitude()</b></span>
 	<ol>
-	  <li> Write a test case for the <em>getLatitude(String carParkId)</em> operation using WSClient</li>
+	  <li> Similiar to the last test case, write a test case to verify getLatitude(String carParkId)</li> operation.
 	</ol>
 </li>
 <li><span style='color:orange'><b>getLatitude(String carParkId)</b></span>
@@ -46,12 +47,14 @@ Please import (if not imported) into the eclipse the projects: <em>car_parking_w
 </li>
 <li><span style='color:blue'><b>shouldReturnTheLongitude()</b></span>
 	<ol>
-	  <li> Write a test case for the <em>getLongitude(String carParkId)</em> operation using WSClient</li>
+	  <li> Now, please write a test for the <em>getLongitude(String carParkId)</em> operation</li>
+          <li> Try to refactor the test cases;
 	</ol>
 </li>
 <li><span style='color:orange'><b>getLongitude(String carParkId)</b></span>
 	<ol>
 	  <li>Develop this operation</li>
+          <li>Try to refactor the source code</li>
 	</ol>
 </li>
 </ol>

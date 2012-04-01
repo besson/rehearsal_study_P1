@@ -1,6 +1,13 @@
 Mapping
 ------------------------------------
 
+proxies
+-----------------------
+** carParkingWS
+real-uri: http://localhost:7003/carParkingWSProxy?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
+
+
 roles
 -----------------------
 ** interactiveGuide:
@@ -17,11 +24,6 @@ mocks
 real-uri: http://localhost:9002/mocks/flightFinder?wsdl
 petals-uri: http://localhost:8084/petals/services/flightFinderMock?wsdl
 
-proxies
------------------------
-** carParkingWS
-real-uri: http://localhost:9003/carParkingWSProxy?wsdl
-petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
 
 ** flightFinder
 real-uri: http://localhost:6002/flightFinderProxy?wsdl

@@ -21,9 +21,14 @@ This page describes a development guide that the developers must follow to imple
 	<h3><b>Introduction</b></h3>
 </hgroup>
 <b>Thanks for attending this study =] </b><br>
-During the study, fell free to ask about any doubt or problem anytime. In the page <a href="info.html"><span style='color:blue'>info</span></a> you can find
+<ul>
+<li>During the study, fell free to ask about any doubt or problem anytime. In the page <a href="info.html"><span style='color:blue'>info</span></a> you can find
 information about the Virtual Machine, the path of tools in the VM, and about the URIs where mocks and interceptors must be deployed. This last information are also provided
-in the descriptions of the development tasks. Please execute the tasks in order. <br> <br> <br>
+in the descriptions of the development tasks. </li>
+<li>Please execute the tasks in order, even if the steps are too easy.</li>
+<li>Try to change the guy who is coding for each 2 hours or even less if you want to</li> 
+<li>Finally, when writing a test case for something that is not developed yet, run the test case anyway and 
+see it fail. Then, code the service/composition to make it passes  </li><br> <br> <br>
  
 <b>Before starting the tasks below, please start the Petals ESB by running:</b>
 <pre>

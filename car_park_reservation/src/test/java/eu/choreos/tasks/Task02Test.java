@@ -45,7 +45,6 @@ public class Task02Test {
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
-		// TODO erase
 
 		assertTrue(false);
 	}

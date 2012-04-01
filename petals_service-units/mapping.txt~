@@ -25,3 +25,4 @@ petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
 
 ** flightFinder
 real-uri: http://localhost:6002/flightFinderProxy?wsdl
+petals-uri: http://localhost:8084/petals/services/flightFinderProxy?wsdl

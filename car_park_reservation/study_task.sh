@@ -9,6 +9,8 @@ echo "Trying to clean petals files..."
 
 rm  "$PETALS_HOME"/installed/sa-SOAP-"$DEPENDENCY"*
 
+sleep 05
+
 if [ "$1" == "02" ] || [ "$1" == "03" ]; then
 
   cp  "$SAS_DIR"/sa-SOAP-"$DEPENDENCY"Proxy-* "$PETALS_HOME/install"

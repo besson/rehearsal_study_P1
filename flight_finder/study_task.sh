@@ -7,6 +7,8 @@ SAS_DIR="/home/rehearsal/workspace/rehearsal-study/petals_service-units/sas"
 
 echo "Trying to clean petals files..."
 
+sleep 05
+
 rm  "$PETALS_HOME"/installed/sa-SOAP-"$DEPENDENCY"* > /dev/null
 
 if [ "$1" == "02" ] || [ "$1" == "03" ]; then

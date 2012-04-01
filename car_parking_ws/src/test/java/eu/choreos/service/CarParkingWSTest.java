@@ -27,8 +27,8 @@ public class CarParkingWSTest {
 	}
 	
 	@Test
-	public void shouldReturnReturnTheCarParkCode() throws Exception {
-		// input: A1, 8
+	public void shouldReturnTheCarParkCode() throws Exception {
+		// input: customerId = A1, terminal = 8
 		// output: J123
 		
 		assertTrue(false);
