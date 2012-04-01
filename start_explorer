@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd item_explorer
+mvn compile
 mvn exec:java
