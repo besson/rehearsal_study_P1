@@ -6,7 +6,16 @@ proxies
 ** carParkingWS
 real-uri: http://localhost:7003/carParkingWSProxy?wsdl
 petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
+** interactiveGuide
+real-uri: http://localhost:6001/interactiveGuideProxy?wsdl
+petals-uri: http://localhost:8084/petals/services/interactiveGuideProxy?wsdl
+** carParkReservation
+real-uri: http://localhost:6003/carParkReservationProxy?wsdl
+petals-uri: http://localhost:8084/petals/services/carParkReservationProxy?wsdl
 
+** webTrip
+real-uri: http://localhost:4321/webTripMock?wsdl
+petals-uri: http://localhost:8084/petals/services/webTripMock?wsdl
 
 roles
 -----------------------

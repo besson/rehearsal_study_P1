@@ -51,6 +51,7 @@ Please import (if not imported) into the eclipse the car_park_reservation projec
 	</ol>
 </li>
 <li>Inside the car_park_reservation directory, run the following command to compile and deploy the process: <pre>$ ./study_task.sh 02<pre></li>
+<li>Run the test again, if it is not green, please review your tests and program</li>
 <span style='color:green'>(even being simple, this test is good to assure that the environment is configured and working correctly)</span>
 </li>
 <li><span style='color:blue'><b>shouldTheCorrectMessageToTheCarParkingService()</b></span>
@@ -62,11 +63,12 @@ Please import (if not imported) into the eclipse the car_park_reservation projec
 </li>
 <li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
 	<ol>
-	  <li>integrate the car_parking_ws service into the composition. Through the carParking <em>@Reference</em>, invoke the operations: <em>getParkCode, getLatitude and getLongitude</em> and store the returned data
+	  <li>integrate the car_parking_ws service into the composition. Through the carParking <em>@Reference</em>, invoke the operations: <em>getParkCode, getLatitude and getLongitude</em> and keep the returned data in this method
 	  </li>
 	</ol>
 </li>
 <li>Stop the process and run it again: <pre>$ ./study_task.sh 02<pre></li>
+<li>Run the test again, if it is not green, please review your tests and program</li>
 <span style='color:green'>(3 messages will be sent to the service, it is recomended to validate all of them, but to simplify the study we are validating only one)</span>
 </li>
 </ol>
@@ -81,10 +83,10 @@ Please import (if not imported) into the eclipse the car_park_reservation projec
 </hgroup>
 In this task, the process that represents the <b>FlightFinder</b> role will be created.
 <br><br>
-Please go to the project flight_finder:
+Please import (if not imported) into the eclipse the flight_finder project:
 <ul>
-<li>all tests must be written on: <em>flight_finder/src/test/java/eu/choreos/Task02Test.java</em> </li>
-<li>the web service code must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+<li><span style='color:blue'>all tests</span> must be written on: <em>flight_finder/src/test/java/eu/choreos/Task02Test.java</em> </li>
+<li><span style='color:orange'>the web service</span> code must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
 </ul>
 <br>
 <h6>Steps:</h6>
@@ -102,16 +104,18 @@ Please go to the project flight_finder:
 </li>	  
 <li><span style='color:orange'><b>getFlightInfo(String id)</b></span>
 <ol>
-<li> Code the simplest code possible to make this test case succeed. Create a dummy FlightInfo object</li>
+<li> Code the simplest code possible to make this test case succeed. Create a dummy FlightInfo object as a result</li>
 </ol>
-<li>Run the following command to compile and deploy the process:<pre>./study_task.sh 02</pre></li>
+<li>Inside flight_finder directory, run the following command to compile and deploy the process:<pre>./study_task.sh 02</pre></li>
+<li>Run the test again, if it is not green, please review your tests and program</li>
 <li><span style='color:blue'><b>shouldReturnTheFlightInformationForTheGetFlightInfoOperation</b></span>
 	<ol>
-	  <li>Create a mock-interceptor for the webTrip WS. The wsdl of this WS can be retrived from the choreography object. The mock must contain the following characteristics:
+	  <li>Create a mock-interceptor for the webTrip WS in the method setUp(). The wsdl of this WS can be retrived from the choreography object. The mock must contain the following characteristics:
 		<ul>
 			<li><b>Mock URI:</b> <em>http://localhost:4321/webTripMock?wsdl</em></li>
-			<li><b>input:</b> "A1" </li>
-			<li><b>output:</b> use the getFligthResponse() method </li> 
+			<li><b>input (whenReceive method):</b> "A1" </li>
+			<li><b>output (replyWith method):</b> use the getFligthResponse() method </li> 
+                        <li><b>mocked operation name (returnFor method):</b> getFlight()</li>         
 		</ul>
 	  </li>
 	  <li>Write a test that invokes the <em>getFlightInfo</em> operation and validate the message received by the mock</li>
@@ -119,10 +123,11 @@ Please go to the project flight_finder:
 </li>
 <li><span style='color:blue'><b>getFlightInfo(String id)</b></span>
 	<ol>
-	  <li>Integrate the mocked service into the process. The webTrip <em>@Reference</em> represents this mocked service. This must be done inside the <em>getFlightInfo</em> operation. The type returned by process is a FlightInfo object. This object must be build based on the object returned by the webTrip WS </li>
+	  <li>Throw the dummy object again and integrate the mocked service into the process. The webTrip <em>@Reference</em> represents this mocked service. This must be done inside the <em>getFlightInfo</em> operation. The type returned by process is a FlightInfo object. This object must be build based on the object returned by the webTrip WS. After building, keep this object in this method </li>
 	</ol>
 </li>
 <li>Stop the process and run it again: <pre>$ ./study_task.sh 02<pre></li>
+<li>Run the test again, if it is not green, please review your tests and program</li>
 </ol>
 </hr>
 </article>

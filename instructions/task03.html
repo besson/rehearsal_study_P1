@@ -28,8 +28,8 @@ In this task, the process that represents the <b>CarParkReservation</b> role wil
 <br><br>
 <b>Pre-requirements - Setting up the dependencies </b>
 <ol>
-	  <li> Start the interactiveGuide process by going to interactive_guide directory and running the command: <pre>./study_task.sh 03</pre></li>
-	  <li> Start the FlightFinder process by going to flight_finder directory and running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Go to the interactive_guide directory and start (stop first, if running) this process by running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Go to the flight_finder directory and start (stop first, if running) this process by running the command: <pre>./study_task.sh 02</pre></li>
 </ol>
 </ul>
 Please go to the project car_park_reservation:
@@ -43,16 +43,17 @@ Please go to the project car_park_reservation:
 <ol> 
 <li><span style='color:blue'><b>shouldSendCarParkInfoToInteractiveGuideCorrectly()</b></span>
 	<ol>
-	  <li>Create a messageInterceptor to intercept the messages sent to the interactiveGuide. The port used for the interceptor is the <b>6001</b>. </li>
-	  <li>invoke the setPassengerInfo operation and create a test to verify if the message sent to the interactiveGuide process is correct</li>
+	  <li>Complete the code of this test case by creating a message interceptor and configure it to get the messages sent to the interactiveGuide process. The port used for the interceptor is the <b>6001</b>. </li>
+	  <li>Invoke the setPassengerInfo operation and verify if the message sent to the interactiveGuide process is correct</li>
 	</ol>
 <li><span style='color:orange'><b>setPassengerInfo(String id, String terminal)</b></span>
 	<ol>
-	  <li>Through the <em>@Reference</em> interactiveGuide, call the operation setParkInfo passing the values extracted from the car parking ws (passengerId, carParkId, latitude, longitude). Use the <em>getCarParKEntry(String id, String codeId, String latitude, String longitude)</em> method
+	  <li>Through the <em>@Reference</em> interactiveGuide, call the operation setParkInfo passing the values extracted from the car parking ws previously (passengerId, carParkId, latitude, longitude). Use the <em>getCarParKEntry(String id, String codeId, String latitude, String longitude)</em> method to created the operation returned method
 </li>
 	</ol>
 </li>
-<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+<li>Stop (if running) and run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+<li>Inside the car_park_reservation directory, run the test again, if it is not green, please review your tests and program</li>
 <span style='color:green'>(In out methodology, this test can also be applied using first mocks and then the real process which is what we did)</span>
 </li>
 </ol>
@@ -69,14 +70,14 @@ In this task, the process that represents the <b>FlightFinder</b> role will be i
 <br><br>
 <b>Pre-requirements - Setting up the dependencies </b>
 <ol>
-	  <li> Start the interactiveGuide process by going to interactive_guide directory and running the command: <pre>./study_task.sh 03</pre></li>
-	  <li> Start the carParkReservation process by going to car_park_reservation directory and running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Go to the interactive_guide directory and start (if running) this process by running the command: <pre>./study_task.sh 03</pre></li>
+	  <li> Go to the interactive_guide directory and start (if running) this process by running the command: <pre>./study_task.sh 03</pre></li>
 </ol>
 </ul>
 Please go to the project flight_finder:
 <ul>
-<li><span style='color:blue'>all tests</test> must be written on: <em>flight_finder/src/test/java/eu/choreos/Task03Test.java</em> </li>
-<li><span style='color:orange'>the web service code</test> must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
+<li><span style='color:blue'>all tests</span> must be written on: <em>flight_finder/src/test/java/eu/choreos/Task03Test.java</em> </li>
+<li><span style='color:orange'>the web service code</span> must be developed on: <em>flight_finder/src/main/java/eu/choreos/service/Orchestrator.java</em></li>
 </ul>
 <br>
 <h6>Steps:</h6>
@@ -84,8 +85,8 @@ Please go to the project flight_finder:
 <ol> 
 <li><span style='color:blue'><b>shouldForwardPassengerIdAndTerminalToTheCarParkReservation()</b></span>
 	<ol>
-	  <li>Create a message interceptor to intercept the messages sent to the carParkReservation. The port used for this interceptor is the <b>6003</b></li>
-	  <li>Invoke the getFlightInfo operation  and create a test to verify if the message sent to the carParkReservation is correct</li>
+	  <li>Complete the code of this test case by creating a message interceptor and configure it to get the messages sent to the carParkReservation. The port used for this interceptor is the <b>6003</b></li>
+	  <li>Invoke the getFlightInfo operation and verify if the message sent to the carParkReservation process is correct</li>
 	</ol>
 </li>
 <li><span style='color:orange'><b>getFlightInfo(String id)</b></span>
@@ -94,7 +95,8 @@ Please go to the project flight_finder:
 </li>
 	</ol>
 </li>
-<li>Run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+<li>Inside the flight_finder directory, stop (if running) and run the following command to compile and deploy the process: <pre>$ ./study_task.sh 03<pre></li>
+<li>Run the test again, if it is not green, please review your tests and program</li>
 </li>
 </ol>
 <hr>

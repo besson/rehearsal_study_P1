@@ -15,7 +15,7 @@ Take a deep breath, it is the last task =]
 
 <br><br>
 
-After validating the message exchange using the message interceptor. Now the choreography is tested without the interceptors and the choreography will be tested from the end user point of view. 
+After validating the message exchange using the message interceptors. Now the choreography is tested without them, now the choreography will be tested from the end user point of view. 
 
 <br><br>
 
@@ -25,9 +25,9 @@ class <em>car_parking_ws/src/test/java/eu/choreos/common/ServiceDeployer.java</e
 <br><br>
 <b>Pre-requirements - Setting up the dependencies </b>
 <ol>
-	  <li> Start the interactiveGuide process by going to interactive_guide directory and running the command: <pre>./study_task.sh 04</pre></li>
-	  <li> Start the flightFinder process by going to flight_finder directory and running the command: <pre>./study_task.sh 04</pre></li>
-	<li> Start the carParkReservation process by going to car_park_reservation directory and running the command: <pre>./study_task.sh 04</pre></li>
+	  <li> Go to the interactive_guide directory and start (stop first, if running) this process by running the command: <pre>./study_task.sh 04</pre></li>
+	  <li> Go to the flight_finder directory and start (stop first, if running) this process by running the command: <pre>./study_task.sh 04</pre></li>
+	<li> Go to the car_park_reservation directory and start (stop first, if running) this process by running the command: <pre>./study_task.sh 04</pre></li>
 </ol>
 
 <br>
@@ -35,6 +35,7 @@ class <em>car_parking_ws/src/test/java/eu/choreos/common/ServiceDeployer.java</e
 <ol>
 <li>
 Read and think about <span style='color:blue'>shouldReturnAConfirmationMessage()</span> acceptance test case in interactive_guide/src/test/java/eu/choreos/ArrivalAtAirportTest.java
+Import interactive_guide, if it is not on eclipse already.
 </li>
 <li>
 Run the test case 

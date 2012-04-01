@@ -1,5 +1,6 @@
 package eu.choreos.tasks;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
@@ -40,12 +41,15 @@ public class Task02Test {
 	public void shouldReturnTheFlightInformationForTheGetFlightInfoOperation() throws Exception {
 		// input passengerId = A1
 		// output a FlightInfo object with the following attributes: id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8 
-		
+		assertTrue(false);
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
-		// TODO erase and put assertTrue(false);
+		// input passengerId = A1
+		// See the web trip contract through item explorer
+
+		assertTrue(false);
 		
 	}
 	
