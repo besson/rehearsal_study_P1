@@ -294,7 +294,7 @@ public class InputScreen extends JFrame {
         itemCopy.setName("itemCopy"); // NOI18N
         itemCopy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	
+
             	if (requestItem == null)
                 		JOptionPane.showMessageDialog(null,"You have to get the Item objects first!" , "No Item objects", JOptionPane.ERROR_MESSAGE);
             else{
@@ -311,7 +311,7 @@ public class InputScreen extends JFrame {
         									formatNames(responseItem);
             	
             		    JTextArea textArea2 = new JTextArea(text, 50,100);
-            		    textArea2.setEditable(false);
+            		   // textArea2.setEditable(false);
             		    textArea2.setPreferredSize(new Dimension(200, 200));
             		    
             		    textArea2.setFont(new Font("Tahoma",Font.BOLD,15));
@@ -321,6 +321,7 @@ public class InputScreen extends JFrame {
             		    frame.add(scrollPane);
             		    frame.pack();
             		    frame.setVisible(true);
+            		    frame.setDefaultCloseOperation(HIDE_ON_CLOSE);
             		    frame.setLocationRelativeTo(null);
             }
             }
