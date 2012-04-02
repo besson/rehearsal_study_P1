@@ -141,7 +141,7 @@ public class InputScreen extends JFrame {
        itemEditor.setName("itemEditor"); // NOI18N
        itemEditor.setEditable(false);
        itemEditor.setContentType("text/html");
-       itemEditor.setFont(new Font("Tahoma",Font.BOLD,25));
+       itemEditor.setFont(new Font("Tahoma",Font.BOLD,15));
         jScrollPane1.setViewportView(itemEditor);
 
         jScrollPane1.setBounds(10, 130, 670, 220);
@@ -159,7 +159,7 @@ public class InputScreen extends JFrame {
        itemEditor1.setName("itemEditor1"); // NOI18N
        itemEditor1.setEditable(false);
        itemEditor1.setContentType("text/html");
-       itemEditor1.setFont(new Font("Tahoma",Font.BOLD,25));
+       itemEditor1.setFont(new Font("Tahoma",Font.BOLD,15));
         jScrollPane2.setViewportView(itemEditor1);
 
         jScrollPane2.setBounds(10, 380, 670, 240);
@@ -297,30 +297,32 @@ public class InputScreen extends JFrame {
             	
             	if (requestItem == null)
                 		JOptionPane.showMessageDialog(null,"You have to get the Item objects first!" , "No Item objects", JOptionPane.ERROR_MESSAGE);
-            	else{
-	            	JTextArea textArea = new JTextArea();
-	            	textArea.setEditable(false);
-	            	textArea.setFont(new Font("Tahoma",Font.BOLD,15));
-	            	textArea.append("Request Item \n");
-	            	textArea.append("-------------------------- \n\n");
-	            	textArea.append(formatNames(requestItem) + "\n\n");
-	            	
-	            	textArea.setFont(new Font("Tahoma",Font.BOLD,15));
-	            	textArea.append("Response Item \n");
-	            	textArea.append("-------------------------- \n\n");
-	            	textArea.append(formatNames(responseItem));
-	            	
-	            	
-	            	JFrame f = new JFrame("Item");
-	                f.setSize(700, 600);
-	                Container content = f.getContentPane();
-	                content.setBackground(Color.white);
-	                content.setLayout(new FlowLayout()); 
-	                content.add(textArea);
-	                f.setResizable(false);
-	                f.setLocationRelativeTo(null);
-	                f.setVisible(true);
-	            }
+            else{
+            	JFrame frame = new JFrame("JTextArea Test");
+            	frame.setLayout(new FlowLayout());
+            	
+
+            	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            	String text = "Request Item \n" + 
+            								"-------------------------- \n\n"+
+            								formatNames(requestItem)  + "\n\n" + 
+        									"Response Item \n" +
+        									"-------------------------- \n\n" +
+        									formatNames(responseItem);
+            	
+            		    JTextArea textArea2 = new JTextArea(text, 50,100);
+            		    textArea2.setEditable(false);
+            		    textArea2.setPreferredSize(new Dimension(200, 200));
+            		    
+            		    textArea2.setFont(new Font("Tahoma",Font.BOLD,15));
+            		    JScrollPane scrollPane = new JScrollPane(textArea2, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+            		        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+            		    textArea2.setLineWrap(true);
+            		    frame.add(scrollPane);
+            		    frame.pack();
+            		    frame.setVisible(true);
+            		    frame.setLocationRelativeTo(null);
+            }
             }
         });
         itemCopy.setBounds(470, 6, 95, 29);
@@ -408,16 +410,10 @@ public class InputScreen extends JFrame {
     }
     
     private String formatNames(String itemContent){
-    	Pattern stringValue = Pattern.compile("[^\"]return[^\"]");
-		Matcher m = stringValue.matcher(itemContent);
-		
-		while (m.find()){ 
-			int interval = m.group(0).length() -1;
-			
-			String subString = m.group(0).substring(0, interval);
-			itemContent = itemContent.replace(subString, subString + "1");
-		}
-		return itemContent;
+    	itemContent = itemContent.replaceAll("return", "return1");
+    	itemContent = itemContent.replaceAll("\"return1\"", "\"return\"");
+
+    	return itemContent;
     }
     
     private String getFilePath(){
