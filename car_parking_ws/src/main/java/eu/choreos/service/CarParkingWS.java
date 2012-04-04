@@ -7,18 +7,18 @@ import com.carsolutions.ParkSafe;
 @WebService
 public class CarParkingWS {
 
+	private ParkSafe parkSafe = new ParkSafe();
+
 	public String getCarParkCode (String customerId, String terminal){
 		
-		return null;
+		return parkSafe.getCarParkPlace(customerId, terminal);
 	}
 	
 	public String getLatitude (String carParkId){
-		
-		return null;
+		return parkSafe.getLatitude(carParkId);
 	}
 	
 	public String getLongitude (String carParkId){
-		
-		return null;
+		return parkSafe.getLongitude(carParkId);
 	}
 }

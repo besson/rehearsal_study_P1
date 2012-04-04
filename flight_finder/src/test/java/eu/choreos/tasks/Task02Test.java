@@ -34,26 +34,41 @@ public class Task02Test {
 		//Retrieve the wsdl uri of the car parking ws
 		Service service = flightFinder.getServicesForRole("flightFinder").get(0);
 		String webTripWSDL = service.getUri();
-		
+		webTripMock = new WSMock("webTripMock", webTripWSDL, "4321", true);
+		webTripMock.start();
 	}
 	
 	@Test
-	public void shouldReturnTheFlightInformationForTheGetFlightInfoOperation() throws Exception {
+	public void shouldReturnFlightInformationForGetFlightInfoOperation() throws Exception {
 		// input passengerId = A1
-		// output a FlightInfo object with the following attributes: id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8 
-		assertTrue(false);
+		// output a FlightInfo object with the following attributes:
+		// id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8
+		WSClient client = new WSClient(flightFinderWSDL);
+		
+		MockResponse response = new MockResponse().whenReceive("A1").replyWith(getFlightResponse());
+		webTripMock.returnFor("getFlight", response);
+		
+		Item flightInfo = client.request("getFlightInfo", "A1").getChild("return");
+		assertEquals("0815", flightInfo.getChild("id").getContent());
+		assertEquals("AA", flightInfo.getChild("company").getContent());
+		assertEquals("Paris", flightInfo.getChild("destination").getContent());
+		assertEquals("130p", flightInfo.getChild("time").getContent());
+		assertEquals("8", flightInfo.getChild("terminal").getContent());
+		
+		Item message = webTripMock.getInterceptedMessages().get(0);
+		assertEquals("A1", message.getChild("id").getContent());
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// input passengerId = A1
 		// See the web trip contract through item explorer
-
+		
 		assertTrue(false);
 		
 	}
 	
-	private static Item getFligthResponse() {
+	private static Item getFlightResponse() {
 		Item getFlightInfoResponse = new ItemImpl("getFlightResponse"); 
 		Item flightInformation = new ItemImpl("flight"); 
 		Item id = new ItemImpl("id"); 

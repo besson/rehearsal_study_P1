@@ -31,11 +31,15 @@ public class Task03Test {
 	}
 	
 	@Test
-	public void shouldForwardPassengerIdAndTerminalToTheCarParkReservation() throws Exception {
+	public void shouldForwardPassengerIdAndTerminalToCarParkReservation() throws Exception {
 		Service carParkReservation = choreography.getServicesForRole("carParkReservation").get(0);
 		String carParkReservationWSDL = carParkReservation.getUri();
 		
-		MessageInterceptor interceptor = null;
+		MessageInterceptor interceptor = new MessageInterceptor("6003");
+		interceptor.interceptTo(carParkReservationWSDL);
+		
+		WSClient client = flightFinder.getWSClient();
+		client.request("getFlightInfo", "A1");
 		
 		List<Item> messages = interceptor.getMessages();
 		

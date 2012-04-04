@@ -32,20 +32,52 @@ public class Task02Test {
 		Service service = carParkReservation.getServicesForRole("carParkReservation").get(0);
 		String carParkingWSWSDL = service.getUri();
 		
+		// create MessageInterceptor for car_reservation service on port 7003
+		interceptor = new MessageInterceptor("7003");
+		interceptor.interceptTo(carParkingWSWSDL);
+		
 	}
 	
 	@Test
-	public void shouldReturnAConfirmationMessageForSetPassengerInfoOperation() throws Exception {
+	public void shouldReturnConfirmationMessageForSetPassengerInfoOperation() throws Exception {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 		// output: "OK"
+		WSClient client = new WSClient(carParkReservationWSDL);
 		
-		assertTrue(false);
+		Item setPassengerInfo = new ItemImpl("setPassengerInfo");
+		setPassengerInfo.addChild(createItem("arg0", "A1"));
+		setPassengerInfo.addChild(createItem("arg1", "8"));
+		
+		Item response = client.request("setPassengerInfo", setPassengerInfo);
+		
+		assertEquals("OK", response.getChild("return").getContent());
 	}
+
 	
 	@Test
-	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
+	public void shouldSendCorrectMessageToCarParkingService() throws Exception {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
-
-		assertTrue(false);
+		WSClient client = new WSClient(carParkReservationWSDL);
+		
+		Item setPassengerInfo = new ItemImpl("setPassengerInfo");
+		setPassengerInfo.addChild(createItem("arg0", "A1"));
+		setPassengerInfo.addChild(createItem("arg1", "8"));
+		
+		client.request("setPassengerInfo", setPassengerInfo);
+		
+		List<Item> messagesToCarParking = interceptor.getMessages();
+		
+		assertEquals("A1", messagesToCarParking.get(0).getChild("arg0").getContent());
+		assertEquals("8", messagesToCarParking.get(0).getChild("arg1").getContent());
+		
+		assertEquals("J123", messagesToCarParking.get(1).getChild("arg0").getContent());
+		assertEquals("J123", messagesToCarParking.get(2).getChild("arg0").getContent());
 	}
+	
+	private Item createItem(String name, String content) {
+		Item item = new ItemImpl(name);
+		item.setContent(content);
+		return item;
+	}
+	
 }

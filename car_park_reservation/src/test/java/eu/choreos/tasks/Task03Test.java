@@ -36,17 +36,26 @@ public class Task03Test {
 	
 	@Test
 	public void shouldSendCarParkInfoToInteractiveGuideCorrectly() throws Exception {
-		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
+		// input: arg0 = A1, arg1 = 8 
+		// (see the contract of carParkReservation by using the item explorer)
 
 		//complete the code below by creating the interceptor and invoking the setPassengerInfo
-		MessageInterceptor interceptor = null;
+		MessageInterceptor interceptor = new MessageInterceptor("6001");
+		interceptor.interceptTo(interactiveGuideWSDL);
 		
+		WSClient client = new WSClient(carParkReservationWSDL);
+		Item setPassengerInfo = new ItemImpl("setPassengerInfo");
+		setPassengerInfo.addChild(createItem("arg0", "A1"));
+		setPassengerInfo.addChild(createItem("arg1", "8"));
+		client.request("setPassengerInfo", setPassengerInfo);
 		
 		List<Item> messages = interceptor.getMessages();
 		
 		assertEquals("A1", messages.get(0).getChild("arg0").getChild("pId").getContent());
 		assertEquals("J123", messages.get(0).getChild("arg0").getChild("cpId").getContent());
 		
+		assertEquals("23 32 S", messages.get(0).getChild("arg0").getChild("latitude").getContent());
+		assertEquals("46 37 W", messages.get(0).getChild("arg0").getChild("longitude").getContent());
 	}
 	
 	private static void deployWebTripMock()throws Exception{
@@ -56,13 +65,13 @@ public class Task03Test {
 		String webTripWSDL = service.getUri();
 				
 		WSMock webTripMock = new WSMock("mocks/webTrip", webTripWSDL, "4321", true);
-		MockResponse response = new MockResponse().whenReceive("A1").replyWith(getFligthResponse());
+		MockResponse response = new MockResponse().whenReceive("A1").replyWith(getFlightResponse());
 				
 		webTripMock.returnFor("getFlight", response);
 		webTripMock.start();
 	}
 
-	private static Item getFligthResponse() {
+	private static Item getFlightResponse() {
 		Item getFlightInfoResponse = new ItemImpl("getFlightResponse"); 
 		Item flightInformation = new ItemImpl("flight"); 
 		Item id = new ItemImpl("id"); 
@@ -83,6 +92,12 @@ public class Task03Test {
 		getFlightInfoResponse.addChild(flightInformation);
 		 
 		return getFlightInfoResponse;
+	}
+	
+	private Item createItem(String name, String content) {
+		Item item = new ItemImpl(name);
+		item.setContent(content);
+		return item;
 	}
 }
 
