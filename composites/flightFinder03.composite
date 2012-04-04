@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" xmlns:wsdli="http://www.w3.org/2004/08/wsdl-instance" name="interactiveGuide" targetNamespace="http://api.choreos.eu/flightFinder">
+
+<service name="interactiveGuideRole" promote="orchestrator/flightFinder">
+	<binding.ws uri="http://localhost:8002/services/flightFinder"/>
+</service>
+
+<component name="orchestrator">
+	<implementation.java class="eu.choreos.service.Orchestrator"/>
+
+<service name="flightFinder">
+	<interface.java interface="eu.choreos.api.FlightFinder"/>
+</service>
+
+<reference name="webTrip">
+	<binding.ws wsdlElement="http://service.safetrip.com#wsdl.port(WebTripImplService/WebTripImplPort)" wsdli:wsdlLocation="file:///home/rehearsal/workspace/rehearsal-study/resources/webTrip/webTrip.wsdl"/>
+</reference>
+
+<reference name="carParkReservation">
+	<binding.ws wsdlElement="http://api.choreos.eu#wsdl.port(CarParkReservation/CarParkReservationPort)" wsdli:wsdlLocation="file:///home/rehearsal/workspace/rehearsal-study/resources/carParkReservation/carParkReservation03.wsdl"/>
+</reference>
+
+</component>
+</composite>

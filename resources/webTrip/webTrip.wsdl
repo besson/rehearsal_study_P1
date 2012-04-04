@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="WebTripImplService" targetNamespace="http://service.safetrip.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://service.safetrip.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.safetrip.com/" schemaLocation="webTrip_xsd_1"/>
+    </xsd:schema>
+  </types>
+  <message name="getFlightResponse">
+    <part name="parameters" element="tns:getFlightResponse">
+    </part>
+  </message>
+  <message name="getFlight">
+    <part name="parameters" element="tns:getFlight">
+    </part>
+  </message>
+  <message name="addFlightResponse">
+    <part name="parameters" element="tns:addFlightResponse">
+    </part>
+  </message>
+  <message name="addFlight">
+    <part name="parameters" element="tns:addFlight">
+    </part>
+  </message>
+  <portType name="WebTrip">
+    <operation name="addFlight">
+      <input message="tns:addFlight" wsam:Action="http://service.safetrip.com/WebTrip/addFlightRequest">
+    </input>
+      <output message="tns:addFlightResponse" wsam:Action="http://service.safetrip.com/WebTrip/addFlightResponse">
+    </output>
+    </operation>
+    <operation name="getFlight">
+      <input message="tns:getFlight" wsam:Action="http://service.safetrip.com/WebTrip/getFlightRequest">
+    </input>
+      <output message="tns:getFlightResponse" wsam:Action="http://service.safetrip.com/WebTrip/getFlightResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="WebTripImplPortBinding" type="tns:WebTrip">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="addFlight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getFlight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WebTripImplService">
+    <port name="WebTripImplPort" binding="tns:WebTripImplPortBinding">
+      <soap:address location="http://localhost:4321/mocks/webTrip"/>
+    </port>
+  </service>
+</definitions>

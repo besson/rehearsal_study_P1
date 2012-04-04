@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://choreos.eu/" version="1.0" targetNamespace="http://choreos.eu/">
+  <xs:element name="calculateLocations" type="tns:calculateLocations" />
+  <xs:element name="calculateLocationsResponse" type="tns:calculateLocationsResponse" />
+  <xs:element name="getFlightAndCarParkLocation" type="tns:getFlightAndCarParkLocation" />
+  <xs:element name="getFlightAndCarParkLocationResponse" type="tns:getFlightAndCarParkLocationResponse" />
+  <xs:element name="setCarParkInfo" type="tns:setCarParkInfo" />
+  <xs:element name="setCarParkInfoResponse" type="tns:setCarParkInfoResponse" />
+  <xs:complexType name="setCarParkInfo">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:carParkEntry" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="carParkEntry">
+    <xs:sequence>
+      <xs:element name="cpId" type="xs:string" minOccurs="0" />
+      <xs:element name="latitude" type="xs:string" minOccurs="0" />
+      <xs:element name="longitude" type="xs:string" minOccurs="0" />
+      <xs:element name="pId" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCarParkInfoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFlightAndCarParkLocation">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFlightAndCarParkLocationResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calculateLocations">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="calculateLocationsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

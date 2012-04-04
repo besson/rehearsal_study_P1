@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FlightFinder" targetNamespace="http://api.choreos.eu/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://api.choreos.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.choreos.eu" xmlns:tns="http://model.choreos.eu">
+      <xsd:complexType name="FlightInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="company" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="destination" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="terminal" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="time" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.choreos.eu/" xmlns:ns0="http://model.choreos.eu">
+      <xsd:import namespace="http://model.choreos.eu"/>
+      <xsd:element name="getFlightInfo" type="tns:getFlightInfo"/>
+      <xsd:complexType name="getFlightInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="arg0" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getFlightInfoResponse" type="tns:getFlightInfoResponse"/>
+      <xsd:complexType name="getFlightInfoResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="ns0:FlightInfo"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getFlightInfo">
+    <wsdl:part name="parameters" element="tns:getFlightInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFlightInfoResponse">
+    <wsdl:part name="parameters" element="tns:getFlightInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FlightFinderPortType">
+    <wsdl:operation name="getFlightInfo">
+      <wsdl:input name="getFlightInfo" message="tns:getFlightInfo">
+    </wsdl:input>
+      <wsdl:output name="getFlightInfoResponse" message="tns:getFlightInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlightFinderSoapBinding" type="tns:FlightFinderPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getFlightInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFlightInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFlightInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlightFinder">
+    <wsdl:port name="FlightFinderPort" binding="tns:FlightFinderSoapBinding">
+      <soap:address location="http://localhost:9002/mocks/flightFinder"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

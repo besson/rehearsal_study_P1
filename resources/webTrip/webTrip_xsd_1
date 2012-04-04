@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.safetrip.com/" version="1.0" targetNamespace="http://service.safetrip.com/">
+  <xs:element name="addFlight" type="tns:addFlight" />
+  <xs:element name="addFlightResponse" type="tns:addFlightResponse" />
+  <xs:element name="getFlight" type="tns:getFlight" />
+  <xs:element name="getFlightResponse" type="tns:getFlightResponse" />
+  <xs:complexType name="addFlight">
+    <xs:sequence>
+      <xs:element name="flight" type="tns:flight" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="flight">
+    <xs:sequence>
+      <xs:element name="company" type="xs:string" minOccurs="0" />
+      <xs:element name="destination" type="xs:string" minOccurs="0" />
+      <xs:element name="id" type="xs:string" minOccurs="0" />
+      <xs:element name="terminal" type="xs:string" minOccurs="0" />
+      <xs:element name="time" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addFlightResponse">
+    <xs:sequence>
+      <xs:element name="result" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFlight">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFlightResponse">
+    <xs:sequence>
+      <xs:element name="flight" type="tns:flight" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

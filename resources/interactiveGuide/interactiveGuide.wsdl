@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="InteractiveGuide" targetNamespace="http://api.choreos.eu/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://api.choreos.eu/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://choreos.eu/" xmlns:tns="http://choreos.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:complexType name="CarParkEntry">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="cpId" nillable="true" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="latitude" nillable="true" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="longitude" nillable="true" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="pId" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema><xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.choreos.eu/" xmlns:ns0="http://choreos.eu/" xmlns:tns="http://api.choreos.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:import namespace="http://choreos.eu/"/>
+   <xsd:element name="setCarParkInfo" type="tns:setCarParkInfo"/>
+   <xsd:complexType name="setCarParkInfo">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="arg0" type="ns0:CarParkEntry"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="setCarParkInfoResponse" type="tns:setCarParkInfoResponse"/>
+   <xsd:complexType name="setCarParkInfoResponse">
+      <xsd:sequence/>
+   </xsd:complexType>
+   <xsd:element name="getFlightAndCarParkLocation" type="tns:getFlightAndCarParkLocation"/>
+   <xsd:complexType name="getFlightAndCarParkLocation">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="arg0" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="getFlightAndCarParkLocationResponse" type="tns:getFlightAndCarParkLocationResponse"/>
+   <xsd:complexType name="getFlightAndCarParkLocationResponse">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="return" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="calculateLocations" type="tns:calculateLocations"/>
+   <xsd:complexType name="calculateLocations">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="arg0" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="calculateLocationsResponse" type="tns:calculateLocationsResponse"/>
+   <xsd:complexType name="calculateLocationsResponse">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="return" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>  </wsdl:types>
+  <wsdl:message name="calculateLocationsResponse">
+    <wsdl:part element="tns:calculateLocationsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFlightAndCarParkLocation">
+    <wsdl:part element="tns:getFlightAndCarParkLocation" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculateLocations">
+    <wsdl:part element="tns:calculateLocations" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setCarParkInfoResponse">
+    <wsdl:part element="tns:setCarParkInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFlightAndCarParkLocationResponse">
+    <wsdl:part element="tns:getFlightAndCarParkLocationResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setCarParkInfo">
+    <wsdl:part element="tns:setCarParkInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="InteractiveGuidePortType">
+    <wsdl:operation name="setCarParkInfo">
+      <wsdl:input message="tns:setCarParkInfo" name="setCarParkInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:setCarParkInfoResponse" name="setCarParkInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightAndCarParkLocation">
+      <wsdl:input message="tns:getFlightAndCarParkLocation" name="getFlightAndCarParkLocation">
+    </wsdl:input>
+      <wsdl:output message="tns:getFlightAndCarParkLocationResponse" name="getFlightAndCarParkLocationResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLocations">
+      <wsdl:input message="tns:calculateLocations" name="calculateLocations">
+    </wsdl:input>
+      <wsdl:output message="tns:calculateLocationsResponse" name="calculateLocationsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InteractiveGuideSoapBinding" type="tns:InteractiveGuidePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setCarParkInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="setCarParkInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setCarParkInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFlightAndCarParkLocation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFlightAndCarParkLocation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFlightAndCarParkLocationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="calculateLocations">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculateLocations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculateLocationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InteractiveGuide">
+    <wsdl:port binding="tns:InteractiveGuideSoapBinding" name="InteractiveGuidePort">
+      <soap:address location="http://localhost:8001/services/interactiveGuide"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

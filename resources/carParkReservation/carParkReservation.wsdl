@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="CarParkReservation" targetNamespace="http://api.choreos.eu/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://api.choreos.eu/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.choreos.eu/" xmlns:tns="http://api.choreos.eu/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="setPassengerInfo" type="tns:setPassengerInfo"/>
+   <xsd:complexType name="setPassengerInfo">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="arg0" nillable="true" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="arg1" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="setPassengerInfoResponse" type="tns:setPassengerInfoResponse"/>
+   <xsd:complexType name="setPassengerInfoResponse">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="return" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>  </wsdl:types>
+  <wsdl:message name="setPassengerInfo">
+    <wsdl:part element="tns:setPassengerInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setPassengerInfoResponse">
+    <wsdl:part element="tns:setPassengerInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CarParkReservationPortType">
+    <wsdl:operation name="setPassengerInfo">
+      <wsdl:input message="tns:setPassengerInfo" name="setPassengerInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:setPassengerInfoResponse" name="setPassengerInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CarParkReservationSoapBinding" type="tns:CarParkReservationPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="setPassengerInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="setPassengerInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setPassengerInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarParkReservation">
+    <wsdl:port binding="tns:CarParkReservationSoapBinding" name="CarParkReservationPort">
+      <soap:address location="http://localhost:8003/services/carParkReservation"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
