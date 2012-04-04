@@ -1,6 +1,5 @@
 package eu.choreos.tasks;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
@@ -13,6 +12,7 @@ import eu.choreos.vv.abstractor.Service;
 import eu.choreos.vv.clientgenerator.Item;
 import eu.choreos.vv.clientgenerator.ItemImpl;
 import eu.choreos.vv.clientgenerator.WSClient;
+import eu.choreos.vv.interceptor.MessageInterceptor;
 import eu.choreos.vv.servicesimulator.MockResponse;
 import eu.choreos.vv.servicesimulator.WSMock;
 
@@ -31,26 +31,57 @@ public class Task02Test {
 		
 		flightFinderWSDL = flightFinder.getUri();
 		
+		
 		//Retrieve the wsdl uri of the car parking ws
 		Service service = flightFinder.getServicesForRole("flightFinder").get(0);
 		String webTripWSDL = service.getUri();
+		
+		webTripMock = new WSMock("webTripMock", webTripWSDL , "4321", true);
+		MockResponse mockResponse = new MockResponse();
+		mockResponse.whenReceive("A1").replyWith(getFligthResponse());
+		webTripMock.returnFor("getFlight", mockResponse);
+		webTripMock.start();
+
 		
 	}
 	
 	@Test
 	public void shouldReturnTheFlightInformationForTheGetFlightInfoOperation() throws Exception {
 		// input passengerId = A1
-		// output a FlightInfo object with the following attributes: id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8 
-		assertTrue(false);
+		// output a FlightInfo object with the following attributes: id = 0815, company = AA, destination = Paris, time = 130p, terminal = 8
+		
+		WSClient client = new WSClient(flightFinderWSDL);
+		
+		
+		Item response = client.request("getFlightInfo", "A1");
+		assertEquals("AA",response.getChild("return").getChild("company").getContent());
+		assertEquals("0815",response.getChild("return").getChild("id").getContent());
+		assertEquals("Paris",response.getChild("return").getChild("destination").getContent());
+		assertEquals("8",response.getChild("return").getChild("terminal").getContent());
+		
+		
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// input passengerId = A1
 		// See the web trip contract through item explorer
-
-		assertTrue(false);
+		Service carParkReservationWS = choreography.getServicesForRole("carParkReservation").get(0);		
+		String carParkReservationWSDL = carParkReservationWS.getUri();
 		
+		Service carParkWS = carParkReservationWS.getServicesForRole("carParkReservation").get(0);		
+		String carParkWSDL = carParkWS.getUri();
+		
+		MessageInterceptor interceptor = new MessageInterceptor("7003");
+		interceptor.interceptTo(carParkWSDL);
+		
+		WSClient client = new WSClient(carParkReservationWSDL);
+		client.request("setPassengerInfo", "A1", "8");
+		
+		List<Item> messages = interceptor.getMessages();
+		assertEquals("A1",messages.get(0).getChild("arg0").getContent());
+		assertEquals("8",messages.get(0).getChild("arg1").getContent());
+	    	
 	}
 	
 	private static Item getFligthResponse() {

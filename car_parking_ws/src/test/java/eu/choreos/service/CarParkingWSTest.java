@@ -30,16 +30,22 @@ public class CarParkingWSTest {
 	public void shouldReturnTheCarParkCode() throws Exception {
 		// input: customerId = A1, terminal = 8
 		// output: J123
+		WSClient client = new WSClient(WSDL_URI);
 		
-		assertTrue(false);
+		Item response = client.request("getCarParkCode", "A1","8");
+		
+		assertEquals("J123", response.getChild("return").getContent());
 	}
 	
 	@Test
 	public void shouldReturnTheLatitude() throws Exception {
 		// input: J123
 		// output: 23 32 S
+		WSClient client = new WSClient(WSDL_URI);
 		
-		assertTrue(false);
+		Item response = client.request("getLatitude", "J123");
+		
+		assertEquals("23 32 S", response.getChild("return").getContent());
 	}
 	
 	@Test
@@ -47,7 +53,11 @@ public class CarParkingWSTest {
 		// input: J123
 		// output: 46 37 W
 		
-		assertTrue(false);
+		WSClient client = new WSClient(WSDL_URI);
+		
+		Item response = client.request("getLongitude", "J123");
+		
+		assertEquals("46 37 W", response.getChild("return").getContent());
 	}
 
 }
