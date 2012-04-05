@@ -1,8 +1,0 @@
-mocks:
-  - real: http://localhost:1234/greetingAWS?wsdl
-    name: greetingAWSMock
-    port: 5000
-
-proxies:
-  - real: http://localhost:1234/greetingAWS?wsdl 
-    port: 6000
