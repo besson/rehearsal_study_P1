@@ -1,1 +1,51 @@
-the file frascati must replace the frascati that exists in your current frascati installation ($FRASCATI_HOME/bin)
+--------------------------------------------------------------------------------------------------------------------
+REHEARSAL STUDY
+--------------------------------------------------------------------------------------------------------------------
+
+This repository contains all code (choreography, services, tests, ....) that were developed in an exploratory 
+study to assess Rehearsal and a TDD methodology proposal (http://ccsl.ime.usp.br/baile/VandV). More information 
+about this study can be found in: 
+
+--------------------------
+Pre conditions
+--------------------------
+The file frascati must replace the frascati that exists in your current frascati installation ($FRASCATI_HOME/bin)
+
+--------------------------
+Considerations
+--------------------------
+The choreography used in the study can be enacted using or not Petals. In the study we did not use petals. If 
+you want to use Petals, please use the script petals_task.sh to deploy the service assemblies. In the case of using 
+Petals the composite descriptors (.composite) are in the folder resource of role. In the case of not using Petals, 
+the ./composite folder contains the composite descriptors and the ./resources folder contains the service contracts.
+
+-------------------------
+Repository organization
+-------------------------
+The repository contains the following projects:
+
+- webTrip: a web service that is mocked in the study
+- park_safe: the legacy system for managing car park reservations
+- car_parking_ws: the web service developed based on the park safe system
+- car_park_reservation: the composite representing the carParkReservation role
+- flight_finder: the composite representing the flightFinder role
+- interactive_guide: the composite representing the interactiveGuide role
+- item_explorer: a tool that supports Rehearsal
+- petals_service-units: petals service assemblies.
+- resources: web service contracts that are used when the choreography is enacted without Petals
+- training: contains Java projects used by the subjects in the training stage
+- composites: composite descriptors (.composite) that are used when the choreography is enacted without Petals
+- wsdl_interfaces: web service contracts 
+
+-------------------------
+Branches
+-------------------------
+
+- master: the code used by the subjects to perform the training and development stages
+- tasks_completed: the code developed by the researcher containing the expected code (when all tasks have been
+developed)
+- team1: the code developed by the team 1 during the study
+- team2: the code developed by the team 2 during the study
+- team3: the code developed by the team 3 during the study
+- team4: the code developed by the team 4 during the study
+
