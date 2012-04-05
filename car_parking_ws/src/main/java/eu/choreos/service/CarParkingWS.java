@@ -2,23 +2,21 @@ package eu.choreos.service;
 
 import javax.jws.WebService;
 
-import com.carsolutions.ParkSafe;
-
 @WebService
 public class CarParkingWS {
 
 	public String getCarParkCode (String customerId, String terminal){
 		
-		return null;
+		return "J123";
 	}
 	
 	public String getLatitude (String carParkId){
 		
-		return null;
+		return "23 32 S";
 	}
 	
 	public String getLongitude (String carParkId){
 		
-		return null;
+		return "46 37 W";
 	}
 }
