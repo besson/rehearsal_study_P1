@@ -1,10 +1,14 @@
 package eu.choreos.wsclient;
 
+import static org.junit.Assert.*;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import eu.choreos.ServiceDeployer;
+import eu.choreos.vv.clientgenerator.Item;
+import eu.choreos.vv.clientgenerator.WSClient;
 
 public class GlobalWeatherTest {
 	
@@ -24,7 +28,7 @@ public class GlobalWeatherTest {
 	@Test
 	public void shouldReturnTheWeatherForSaoPaulo() throws Exception {
 		/**
-		 *  input: Brazil, Sao Paulo
+		 *  inputs: Brazil, Sao Paulo
 		 * 
 		 *  output:
 		 *  location: Sao Paulo/Congonhas Airport, Brazil
@@ -34,7 +38,10 @@ public class GlobalWeatherTest {
 		 *  relative humidity: 77%;
 		 *  
 		 */
-	
+		
+		WSClient myClient = new WSClient(WSDL);
+		Item aResponse = myClient.request("getWeather" , "Brazil" , "Sao Paulo");	
+		String aTemperature = aResponse.getChild("return").getChild("temperature").getContent();
+		assertEquals("21C", aTemperature);
 	}
-
 }

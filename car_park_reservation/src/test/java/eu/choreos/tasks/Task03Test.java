@@ -39,8 +39,11 @@ public class Task03Test {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 
 		//complete the code below by creating the interceptor and invoking the setPassengerInfo
-		MessageInterceptor interceptor = null;
+		MessageInterceptor interceptor = new MessageInterceptor("6001");
+		interceptor.interceptTo(interactiveGuideWSDL);
 		
+		WSClient client = new WSClient(carParkReservationWSDL);
+		client.request("setPassengerInfo", "A1", "8");
 		
 		List<Item> messages = interceptor.getMessages();
 		

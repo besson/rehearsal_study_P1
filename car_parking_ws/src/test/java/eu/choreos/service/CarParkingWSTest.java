@@ -31,7 +31,10 @@ public class CarParkingWSTest {
 		// input: customerId = A1, terminal = 8
 		// output: J123
 		
-		assertTrue(false);
+		WSClient client = new WSClient(WSDL_URI);
+		Item response = client.request("getCarParkCode", "A1", "8");
+		String output = response.getChild("return").getContent();
+		assertEquals("J123", output);
 	}
 	
 	@Test
@@ -39,7 +42,10 @@ public class CarParkingWSTest {
 		// input: J123
 		// output: 23 32 S
 		
-		assertTrue(false);
+		WSClient client = new WSClient(WSDL_URI);
+		Item response = client.request("getLatitude", "J123");
+		String output = response.getChild("return").getContent();
+		assertEquals("23 32 S", output);
 	}
 	
 	@Test
@@ -47,7 +53,10 @@ public class CarParkingWSTest {
 		// input: J123
 		// output: 46 37 W
 		
-		assertTrue(false);
+		WSClient client = new WSClient(WSDL_URI);
+		Item response = client.request("getLongitude", "J123");
+		String output = response.getChild("return").getContent();
+		assertEquals("46 37 W", output);
 	}
 
 }
