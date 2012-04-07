@@ -10,7 +10,8 @@ import eu.choreos.model.WeatherResult;
 public class GlobalWeatherWS {
 	
 	@WebMethod
-	public WeatherResult getWeather(@WebParam(name="countryName") String country, @WebParam(name="cityName") String city ){
+	public WeatherResult getWeather(@WebParam(name="countryName") String country, 
+								    @WebParam(name="cityName") String city ){
 		WeatherResult result = new WeatherResult();
 		
 		result.setDate("Mar 30, 2012");

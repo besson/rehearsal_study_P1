@@ -24,14 +24,16 @@ public class GlobalWeatherTest {
 	@Test
 	public void shouldReturnTheWeatherForSaoPaulo() throws Exception {
 		/**
-		 *  input: Brazil, Sao Paulo
+		 *  input:
+		 *    contryName: Brazil
+		 *    cityName: Sao Paulo
 		 * 
 		 *  output:
-		 *  location: Sao Paulo/Congonhas Airport, Brazil
-		 *  date: Mar 30, 2012
-		 *  time: 03:00 PM
-		 *  temperature: 21C
-		 *  relative humidity: 77%;
+		 *    location: Sao Paulo/Congonhas Airport, Brazil
+		 *    date: Mar 30, 2012
+		 *    time: 03:00 PM
+		 *    temperature: 21C
+		 *    relative humidity: 77%;
 		 *  
 		 */
 	

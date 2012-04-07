@@ -31,10 +31,8 @@ public class GlobalWeatherMockTest {
 	
 	@Test
 	public void shouldReturnTheWeatherOfOtherCountry() throws Exception {
-		// Create a mock without conditions and choose you own WeatherResult. 
+		// Create a mock without conditions and choose your own WeatherResult. 
 		// Use item explorer to help to build the response
-		
-		
 	}
 
 }
