@@ -32,6 +32,9 @@ public class Task02Test {
 		Service service = carParkReservation.getServicesForRole("carParkReservation").get(0);
 		String carParkingWSWSDL = service.getUri();
 		
+		interceptor = new MessageInterceptor("7003");
+		interceptor.interceptTo(carParkingWSWSDL);
+
 	}
 	
 	@Test
@@ -39,13 +42,25 @@ public class Task02Test {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
 		// output: "OK"
 		
-		assertTrue(false);
+		WSClient client = new WSClient(carParkReservationWSDL);
+		Item responseItem = client.request("setPassengerInfo","A1","8");
+		String output = responseItem.getChild("return").getContent();
+		
+		assertEquals("OK", output);
 	}
 	
 	@Test
 	public void shouldTheCorrectMessageToTheCarParkingService() throws Exception {
 		// input: arg0 = A1, arg1 = 8 (see the contract of carParkReservation by using the item explorer)
-
-		assertTrue(false);
+		
+		WSClient client = new WSClient(carParkReservationWSDL);
+		client.request("setPassengerInfo","A1","8");
+		
+		Item interceptedItem = interceptor.getMessages().get(0);
+		String id = interceptedItem.getChild("arg0").getContent();
+		String terminal = interceptedItem.getChild("arg1").getContent();
+		
+		assertEquals("A1", id);
+		assertEquals("8", terminal);
 	}
 }
